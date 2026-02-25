@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(terminal-notifier*)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "WebFetch(domain:inspect.aisi.org.uk)",
+      "WebFetch(domain:docs.python.org)",
+      "WebFetch(domain:pypi.org)",
+      "WebFetch(domain:packaging.python.org)",
+      "WebFetch(domain:docs.astral.sh)",
+      "WebFetch(domain:docs.pytest.org)",
+      "WebFetch(domain:typing.readthedocs.io)",
+      "WebFetch(domain:docs.pydantic.dev)",
+      "WebFetch(domain:numpy.org)",
+      "WebFetch(domain:pandas.pydata.org)",
+      "WebFetch(domain:matplotlib.org)",
+      "WebFetch(domain:pytorch.org)",
+      "WebFetch(domain:huggingface.co)",
+      "WebFetch(domain:developer.mozilla.org)",
+      "WebFetch(domain:docs.github.com)",
+      "WebFetch(domain:docs.docker.com)",
+      "mcp__claude_ai_Hugging_Face__hf_doc_search",
+      "mcp__claude_ai_Hugging_Face__hf_doc_fetch",
+      "WebFetch(domain:thinkingmachines.ai)",
+      "WebFetch(domain:ukgovernmentbeis.github.io)",
+      "WebFetch(domain:docs.claude.com)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(command:uv sync)",
+      "WebFetch(domain:www.lesswrong.com)",
+      "WebFetch(domain:metr.org)",
+      "WebFetch(domain:arxiv.org)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(pip show:*)",
+      "Bash(uv pip show:*)",
+      "WebFetch(domain:inspect.ai-safety-institute.org.uk)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:hamel.dev)",
+      "Bash(uv sync:*)",
+      "Bash(uv run:*)",
+      "Bash(uv run python:*)",
+      "Bash(uv add:*)",
+      "Bash(uv pip install:*)",
+      "WebFetch(domain:developers.openai.com)",
+      "mcp__claude_ai_Hugging_Face__dataset_search",
+      "mcp__claude_ai_Hugging_Face__hub_repo_details",
+      "Bash(git add:*)",
+      "Bash(which uv)"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "MSG=$(jq -r '.message // \"needs your input\"') && terminal-notifier -title 'Claude Code' -message \"$MSG\" -sound default -activate com.apple.Terminal"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message \"Completed your task in $(basename $(pwd))\" -sound default -activate com.apple.Terminal"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754101374377
+  },
+  "effortLevel": "medium"
+}
