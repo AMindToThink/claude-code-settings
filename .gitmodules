@@ -1,0 +1,3 @@
+[submodule "repos/ChernyCode"]
+	path = repos/ChernyCode
+	url = https://github.com/meleantonio/ChernyCode.git
