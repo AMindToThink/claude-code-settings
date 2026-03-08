@@ -18,3 +18,5 @@ statsig/
 tasks/
 telemetry/
 todos/
+usage-data/
+mcp-needs-auth-cache.json
