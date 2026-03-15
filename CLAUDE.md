@@ -32,3 +32,20 @@ Use these commands:
 - Or using uv CLI:
     - `uv add package-name --script script.py`
     - `uv remove package-name --script script.py`
+
+# Shared Machine (cs29824) — Git User Mapping
+
+This machine is shared. Each folder under `/home/cs29824/` belongs to a different user. Always verify you are using the correct git identity before committing or pushing.
+
+| Folder | GitHub User |
+|--------|-------------|
+| `matthew/` | AMindToThink |
+| `andre/` | antebe |
+
+Before any git commit or push, run `git config user.name` to confirm the identity matches the folder you're working in.
+
+# Error Handling Philosophy
+
+- **Never use `continue` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
+- Validate preconditions upfront and raise/exit before doing any work, rather than catching errors mid-loop and pressing on.
+- Prefer failing fast over producing partial/misleading results.

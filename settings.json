@@ -59,7 +59,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "MSG=$(jq -r '.message // \"needs your input\"') && terminal-notifier -title 'Claude Code' -message \"$MSG\" -sound default -activate com.apple.Terminal"
+            "command": "if command -v terminal-notifier &>/dev/null; then JQ=$(command -v jq 2>/dev/null || echo \"$HOME/.local/bin/jq\"); MSG=$(\"$JQ\" -r '.message // \"needs your input\"'); terminal-notifier -title 'Claude Code' -message \"$MSG\" -sound default -activate com.apple.Terminal; elif [ \"$(uname)\" = Darwin ] && command -v osascript &>/dev/null; then JQ=$(command -v jq 2>/dev/null || echo \"$HOME/.local/bin/jq\"); MSG=$(\"$JQ\" -r '.message // \"needs your input\"'); osascript -e \"display notification \\\"$MSG\\\" with title \\\"Claude Code\\\" sound name \\\"default\\\"\"; fi; exit 0"
           }
         ]
       }
@@ -70,7 +70,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message \"Completed your task in $(basename $(pwd))\" -sound default -activate com.apple.Terminal"
+            "command": "if command -v terminal-notifier &>/dev/null; then terminal-notifier -title 'Claude Code' -message \"Completed your task in $(basename $(pwd))\" -sound default -activate com.apple.Terminal; elif [ \"$(uname)\" = Darwin ] && command -v osascript &>/dev/null; then osascript -e \"display notification \\\"Completed your task in $(basename $(pwd))\\\" with title \\\"Claude Code\\\" sound name \\\"default\\\"\"; fi; exit 0"
           }
         ]
       }
@@ -82,6 +82,5 @@
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
-  },
-  "effortLevel": "medium"
+  }
 }

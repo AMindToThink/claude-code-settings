@@ -2,20 +2,27 @@
 # Claude Code statusline script
 # Receives JSON on stdin with session info
 
+# Find jq: prefer system jq, fall back to ~/.local/bin
+JQ=$(command -v jq 2>/dev/null || echo "$HOME/.local/bin/jq")
+if [ ! -x "$JQ" ]; then
+    echo "jq not found"
+    exit 0
+fi
+
 DATA=$(cat)
 
-CWD=$(echo "$DATA" | jq -r '.cwd // ""')
-MODEL=$(echo "$DATA" | jq -r '.model.display_name // ""')
-COST=$(echo "$DATA" | jq -r '.cost.total_cost_usd // 0' | xargs printf "%.3f")
-CTX=$(echo "$DATA" | jq -r '.context_window.used_percentage // 0' | xargs printf "%.0f")
-ADDED=$(echo "$DATA" | jq -r '.cost.total_lines_added // 0')
-REMOVED=$(echo "$DATA" | jq -r '.cost.total_lines_removed // 0')
+CWD=$(echo "$DATA" | "$JQ" -r '.cwd // ""')
+MODEL=$(echo "$DATA" | "$JQ" -r '.model.display_name // ""')
+COST=$(echo "$DATA" | "$JQ" -r '.cost.total_cost_usd // 0' | xargs printf "%.3f")
+CTX=$(echo "$DATA" | "$JQ" -r '.context_window.used_percentage // 0' | xargs printf "%.0f")
+ADDED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_added // 0')
+REMOVED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_removed // 0')
 
 # Shorten home directory to ~
 CWD="${CWD/#$HOME/~}"
 
 # Git branch (from the cwd)
-BRANCH=$(git -C "$(echo "$DATA" | jq -r '.cwd // "."')" rev-parse --abbrev-ref HEAD 2>/dev/null)
+BRANCH=$(git -C "$(echo "$DATA" | "$JQ" -r '.cwd // "."')" rev-parse --abbrev-ref HEAD 2>/dev/null)
 
 # Build the line
 LINE=""
