@@ -48,7 +48,8 @@
       "mcp__claude_ai_Hugging_Face__dataset_search",
       "mcp__claude_ai_Hugging_Face__hub_repo_details",
       "Bash(git add:*)",
-      "Bash(which uv)"
+      "Bash(which uv)",
+      "Grep"
     ],
     "defaultMode": "default"
   },

@@ -1,2 +1,3 @@
 - [user_matthew_errors_loud.md](user_matthew_errors_loud.md) — Matthew wants errors loud; never suppress warnings or silently fix problems
 - [feedback_verify_inherited_explanations.md](feedback_verify_inherited_explanations.md) — Don't repeat explanations from old docs; verify them against current evidence
+- [user_matthew_message_style.md](user_matthew_message_style.md) — Matthew sends messages while Claude works; use prefix (After this / Stop / For later) to determine priority
