@@ -20,3 +20,6 @@ telemetry/
 todos/
 usage-data/
 mcp-needs-auth-cache.json
+.credentials.json
+settings.local.json
+sessions/
