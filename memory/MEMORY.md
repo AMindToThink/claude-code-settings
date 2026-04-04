@@ -4,3 +4,5 @@
 - [user_cite_sources.md](user_cite_sources.md) — HIGH PRIORITY: all numbers in files must cite a deterministic, re-runnable source
 - [user_no_manual_numbers.md](user_no_manual_numbers.md) — paper tables must be script-generated .tex files, \input'd; never hand-copy numbers
 - [feedback_submodule_safety.md](feedback_submodule_safety.md) — Always check git status before submodule update to avoid overwriting work
+- [feedback_never_override_defaults.md](feedback_never_override_defaults.md) — Never override framework defaults without diagnosed reason; ask first
+- [feedback_easy_should_be_easy.md](feedback_easy_should_be_easy.md) — Diagnose config issues before writing custom code; ask before going custom

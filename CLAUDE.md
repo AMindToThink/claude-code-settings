@@ -49,3 +49,7 @@ Before any git commit or push, run `git config user.name` to confirm the identit
 - **Never use `continue` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
 - Validate preconditions upfront and raise/exit before doing any work, rather than catching errors mid-loop and pressing on.
 - Prefer failing fast over producing partial/misleading results.
+
+# Claude Code Skills
+
+When creating skills, always use the directory convention: `~/.claude/skills/<skill-name>/SKILL.md`. Never create a flat file like `~/.claude/skills/<skill-name>.md` — it will be silently ignored.
