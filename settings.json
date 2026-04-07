@@ -50,7 +50,8 @@
       "mcp__claude_ai_Hugging_Face__hub_repo_details",
       "Bash(git add:*)",
       "Bash(which uv)",
-      "Grep"
+      "Grep",
+      "Bash(~/.claude/.claude-tools/search-claude-logs.py *)"
     ],
     "defaultMode": "default"
   },
@@ -62,6 +63,30 @@
           {
             "type": "command",
             "command": "if command -v terminal-notifier &>/dev/null; then JQ=$(command -v jq 2>/dev/null || echo \"$HOME/.local/bin/jq\"); MSG=$(\"$JQ\" -r '.message // \"needs your input\"'); terminal-notifier -title 'Claude Code' -message \"$MSG\" -sound default -activate com.apple.Terminal; elif [ \"$(uname)\" = Darwin ] && command -v osascript &>/dev/null; then JQ=$(command -v jq 2>/dev/null || echo \"$HOME/.local/bin/jq\"); MSG=$(\"$JQ\" -r '.message // \"needs your input\"'); osascript -e \"display notification \\\"$MSG\\\" with title \\\"Claude Code\\\" sound name \\\"default\\\"\"; fi; exit 0"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Glob|Grep|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/search-failure-tracker.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/search-failure-reset.sh",
+            "timeout": 5
           }
         ]
       }
@@ -85,5 +110,5 @@
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
   },
-  "effortLevel": "high"
+  "effortLevel": "max"
 }
