@@ -1,6 +1,6 @@
 {
-  "cleanupPeriodDays": 99999,
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 99999,
   "permissions": {
     "allow": [
       "Bash(terminal-notifier*)",
@@ -51,7 +51,8 @@
       "Bash(git add:*)",
       "Bash(which uv)",
       "Grep",
-      "Bash(~/.claude/.claude-tools/search-claude-logs.py *)"
+      "Bash(~/.claude/.claude-tools/search-claude-logs.py *)",
+      "Bash(git commit -m *)"
     ],
     "defaultMode": "default"
   },
@@ -107,8 +108,27 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
+  "enabledPlugins": {
+    "double-shot-latte@superpowers-marketplace": false,
+    "superpowers@superpowers-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code"
+      }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
   },
-  "effortLevel": "max"
+  "skipAutoPermissionPrompt": true
 }
