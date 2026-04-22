@@ -37,6 +37,7 @@ If the user types `\cite{foo}` and `foo` isn't in the bib yet, this skill applie
 1. You list identifiers. The script fetches metadata. The .bib file is generated.
 2. You never type author names, titles, years, or venues into a BibTeX entry.
 3. "Manual" entries (for papers without arXiv/DOI/ACL ID) are allowed but flagged — they reintroduce the failure mode.
+4. **Citation keys must match the first author the metadata resolves to.** Keys are not opaque IDs — they show up in `.tex` source, in grep, in reviewers' mental models. A key like `lam2025noveltybench` on a paper whose first author is Yiming Zhang is a hallucinated attribution preserved in amber, even if the rendered PDF says "Zhang et al." correctly. Hallucinations must be eliminated wherever they occur, including keys. If a canonical community key exists (ACL Anthology format, DBLP style, conference-preferred), prefer that; otherwise construct `<firstauthor><year><shorttitleword>` from real metadata. **If you find a key that encodes a wrong attribution, rename it** (both in `refs_ids.toml` and every `\cite{}` site) — don't leave the lie in the source.
 
 ## Step 1: Check Whether the Project Already Has the Pattern
 
@@ -174,6 +175,7 @@ Be explicit with the user about the system's limits:
 | Two different "Smith et al. 2025" papers cited | genuine year+author collision | natbib adds `a`/`b` suffixes automatically — no action needed |
 | arXiv submission year differs from venue year | paper published at later conference | prefer `acl:` / `doi:` over `arxiv:`, or accept the submission year |
 | Crossref returns volume 13 for a paper you thought was volume 15 | the `arxiv:` preprint had wrong metadata | trust the DOI — the published volume is canonical |
+| `\cite{lam2025X}` renders as "Zhang et al. 2025" (key and rendered author don't match) | key was hand-typed against a hallucinated first author and never corrected | rename the key to match the real first author; update `refs_ids.toml` and every `\cite{}` site; rebuild `refs.bib` and re-run `verify_cites.py` |
 
 ## Reference Implementation
 
