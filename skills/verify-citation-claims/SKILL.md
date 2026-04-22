@@ -60,18 +60,33 @@ If `paper/refs_ids.toml` exists (from `bibliography-from-ids`), the `claim = "..
 
 For each citation, record the authoritative URL:
 
-- arXiv: `https://arxiv.org/abs/<id>` (or `.../pdf/<id>` for the PDF)
+- arXiv: **`https://ar5iv.labs.arxiv.org/html/<id>`** (first choice — version-agnostic, readable HTML). Fall back to `https://arxiv.org/abs/<id>` only if ar5iv is down.
 - DOI: `https://doi.org/<id>`
 - ACL Anthology: `https://aclanthology.org/<id>/` (and `.pdf`)
 - OpenReview: `https://openreview.net/forum?id=<id>`
 
-Prefer HTML versions for arXiv when available (`https://arxiv.org/html/<id>v<N>`) — they're much easier for WebFetch to parse than PDFs.
+**arXiv URL guidance — lessons from the 2026-04-22 first-invocation test:**
+
+- `https://ar5iv.labs.arxiv.org/html/<id>` — **Use this first.** It does not require a version suffix (no `v1` / `v2`) and returns readable HTML that WebFetch can parse section-by-section.
+- `https://arxiv.org/html/<id>v<N>` — Avoid. Agents routinely guess the wrong version number and get 404s.
+- `https://arxiv.org/abs/<id>` — Returns the abstract only. Too thin to verify section-level claims; use only as a last-resort fallback if ar5iv is unreachable.
+- `https://arxiv.org/pdf/<id>` — Avoid via WebFetch. Comes back as unreadable binary.
 
 ### Step 3: Dispatch one subagent per citation, in parallel
 
 This is the heavy-lifting step. Use the `dispatching-parallel-agents` pattern. A dozen citations verified sequentially takes hours; in parallel, minutes.
 
-Per-citation subagent prompt template:
+**Task-tool fallback:** If the `Task` / parallel-agent tool is not
+available in your harness (as was the case during the 2026-04-22
+first-invocation test), substitute **parallel `WebFetch` calls issued
+in a single message** from the main conversation. The work still
+parallelizes at the HTTP level; you lose the isolated-context benefit
+(the main agent now carries every paper's content in its window), but
+the verification itself still works. Pass the same prompt-template
+content as inline instructions, and synthesize the findings yourself.
+
+Per-citation subagent prompt template (also usable as inline guidance
+for the `WebFetch` fallback):
 
 ```
 Task: Verify a citation in a research paper by reading the actual cited
@@ -85,8 +100,15 @@ paper and checking that its claims match what our paper says.
 2. <additional claims if any>
 
 **Your task:**
-1. Find the paper via <URL>. Use WebFetch on the abstract page and the
-   full-text HTML / PDF.
+1. Find the paper via <URL>.
+   - For **arXiv** papers, use `https://ar5iv.labs.arxiv.org/html/<id>` as
+     the first-try URL. It is version-agnostic (no `v1` / `v2` suffix)
+     and returns readable HTML. Do NOT try `arxiv.org/html/<id>v<N>`
+     (agents routinely guess the wrong version and get 404s), and do NOT
+     WebFetch `arxiv.org/pdf/<id>` (comes back as unreadable binary).
+     Fall back to `arxiv.org/abs/<id>` only if ar5iv is down — the
+     abstract alone is too thin to verify section-level claims.
+   - For DOIs, OpenReview, and ACL Anthology, use the canonical URLs.
 2. Read the abstract, introduction, and methods. Then locate the
    specific section(s) relevant to each claim above.
 3. Verify:
@@ -100,8 +122,18 @@ paper and checking that its claims match what our paper says.
    "[cite]" (e.g., "Smith et al. 2024, §3.2" or "Smith et al. 2024,
    Theorem 1").
 
-**If you cannot access the paper** (web search fails, paywall, 404),
-flag clearly: "UNABLE TO VERIFY — needs manual review." Do NOT guess.
+**If direct fetch fails** (paywall, 404, unreadable PDF), try a
+**WebSearch for the specific claim phrase** — a numerical figure, a
+section title, or a distinctive quote. It often surfaces the fact on a
+cache or citing secondary source (Semantic Scholar, OpenReview
+discussion, NASA ADS for physics, DBLP for CS venues, EleutherAI
+leaderboards for LM benchmarks). This is particularly useful for
+published-venue metadata (journal volumes, page counts) that appears in
+indices like ADS, DBLP, or Semantic Scholar.
+
+**If you still cannot access the paper** after trying ar5iv, the
+fallback URL, and a WebSearch for the claim phrase, flag clearly:
+"UNABLE TO VERIFY — needs manual review." Do NOT guess.
 
 **Return a short report (~300 words) with:**
 - arxiv / DOI / canonical URL
@@ -166,12 +198,36 @@ If the user sets up the bibliography with `bibliography-from-ids` from the start
 
 If the project doesn't use `bibliography-from-ids` yet, you can do Step 1 yourself by reading the `.tex` and grep'ing for `\cite{}` sites. Consider recommending `bibliography-from-ids` to the user as part of the findings.
 
+## Troubleshooting: When Direct Fetch Fails
+
+Citation verification routinely hits dead ends — a PDF is paywalled,
+the HTML link is stale, arXiv times out. Before giving up and marking
+"UNABLE TO VERIFY," try in this order:
+
+1. **Wrong arXiv URL shape.** If a subagent reports 404, check whether
+   it used `arxiv.org/html/<id>v<N>` (prone to version mismatch) or
+   `arxiv.org/pdf/<id>` (unreadable binary). Redirect it to
+   `ar5iv.labs.arxiv.org/html/<id>`, which is version-agnostic.
+2. **WebSearch for the specific claim phrase.** A numerical figure, a
+   section title, or a distinctive quote from the paper often surfaces
+   the fact on a cache or citing secondary source: Semantic Scholar,
+   OpenReview discussion threads, NASA ADS (physics), DBLP (CS
+   venues), or scorecard-style indices like the EleutherAI LM
+   leaderboard. This was how the 2026-04-22 test run confirmed a GPT-3
+   bits-per-byte number (EleutherAI leaderboard) and a Crutchfield
+   journal volume (ADS) when direct fetch didn't work.
+3. **Author's homepage / lab page.** Some authors host a free PDF or an
+   extended-abstract HTML that evades the venue paywall.
+4. **Only after all three fail**, mark "UNABLE TO VERIFY — needs
+   manual review." Do NOT guess; guessing reintroduces the
+   fabrication failure mode this skill exists to prevent.
+
 ## What This Skill Does NOT Handle
 
 - **Numbers inside tables or figures** → that is `import-content`.
 - **Typographical and grammar issues** → out of scope; use an editor / linter.
 - **Novelty claims** ("we are the first to…") — subagents can sometimes catch these if the cited paper predates the claim and does the same thing, but the skill isn't specifically designed for prior-art search. For serious novelty checks, run a separate literature-search pass.
-- **Paywalled papers** — report "UNABLE TO VERIFY" and ask the user to check manually or provide a copy.
+- **Paywalled papers** — try the Troubleshooting steps above first (WebSearch for the claim phrase often surfaces the fact on a cache or citing secondary source). If all routes fail, report "UNABLE TO VERIFY" and ask the user to check manually or provide a copy.
 
 ## Related Skills
 
