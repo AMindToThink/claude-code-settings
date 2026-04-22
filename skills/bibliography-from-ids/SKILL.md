@@ -13,7 +13,7 @@ This is the citation analog of `import-content` (which does the same for tables 
 
 LLMs — including you — fabricate citation metadata at rates of 14 % to 95 % across domains (see CheckIfExist 2026, GhostCite 2026, BibTeX Citation Hallucinations 2026). The characteristic failure mode is: real paper title, real year, **completely wrong author list**. The author list is what gets rendered in every in-text citation, so this is a load-bearing error.
 
-A real incident (Matthew's ICL-diversity paper, 2026-04-21): audit of 12 citations found 4 fabricated author lists, 1 unsupported claim, 1 wrong volume number, 4 wrong titles. Every fabricated entry pointed to a real paper — the identifier would have been correct if recorded. Identifier-first authoring would have prevented every single case.
+A real incident during paper writing: an audit of 12 citations found 4 fabricated author lists, 1 unsupported claim, 1 wrong volume number, and 4 wrong titles. Every fabricated entry pointed to a real paper — the identifier would have been correct if recorded. Identifier-first authoring would have prevented every single case.
 
 ## When to Use
 
@@ -52,7 +52,7 @@ If not: set it up (Step 2).
 
 ## Step 2: Set Up the Pattern for a New Project
 
-Minimum four files. Below is a compact reference template. The icl-diversity project has the full reference implementation at `/home/cs29824/matthew/icl-diversity/` — check `scripts/build_bib.py`, `scripts/verify_cites.py`, `paper/refs_ids.toml`, `paper/CITATIONS.md`, `tests/test_bib_pipeline.py` for a complete working example.
+Minimum four files. Below is a compact reference template. Full working copies of the scripts ship with this skill in `examples/` (see the Reference Implementation section below); copy them into the target project to get started faster.
 
 ### `paper/refs_ids.toml` — the only human-editable file
 
@@ -104,7 +104,7 @@ Core responsibilities:
 5. Write `paper/refs.bib` **atomically** (temp-file + `os.replace`) so a failed run leaves the previous `refs.bib` intact.
 6. Fail loudly on: missing field, non-200 HTTP, zero authors, zero title, unresolved identifier.
 
-Fail-loud philosophy — per Matthew's CLAUDE.md: never silently skip errors. `continue` on a missing field is forbidden.
+Fail-loud philosophy: never silently skip errors. `continue` on a missing field is forbidden.
 
 ### arXiv API — watch for these gotchas
 
@@ -177,17 +177,18 @@ Be explicit with the user about the system's limits:
 
 ## Reference Implementation
 
-Complete worked example with all four files, unit tests, and reference bibliography:
+Portable reference implementation ships with this skill in `examples/`:
 
-- `/home/cs29824/matthew/icl-diversity/scripts/build_bib.py`
-- `/home/cs29824/matthew/icl-diversity/scripts/verify_cites.py`
-- `/home/cs29824/matthew/icl-diversity/paper/refs_ids.toml`
-- `/home/cs29824/matthew/icl-diversity/paper/refs.bib`
-- `/home/cs29824/matthew/icl-diversity/paper/CITATIONS.md`
-- `/home/cs29824/matthew/icl-diversity/paper/citation_verification_report.md` (the audit that motivated it)
-- `/home/cs29824/matthew/icl-diversity/tests/test_bib_pipeline.py`
+- `examples/build_bib.py` — the resolver (arXiv / Crossref / ACL Anthology → `paper/refs.bib`, atomic writes, fail-loud).
+- `examples/verify_cites.py` — the offline linter. `\cite{}` ↔ `refs.bib` correspondence.
+- `examples/test_bib_pipeline.py` — unit tests (10 tests; uses `--offline-manual-only` so CI doesn't need network).
+- `examples/refs_ids.toml.example` — sanitized demo TOML with all four identifier types (arxiv / doi / acl / manual) and the `skip_authors` override.
 
-Copy and adapt. Don't reimplement from scratch unless the project's stack (e.g. non-Python) requires it.
+**To use:** copy `examples/build_bib.py`, `examples/verify_cites.py`, `examples/test_bib_pipeline.py` into the target project's `scripts/` and `tests/`. Rename `examples/refs_ids.toml.example` to `paper/refs_ids.toml` and populate with the project's own citations. Add `paper/CITATIONS.md` with the project-specific workflow (this SKILL.md is a template for its content).
+
+The absolute paths in these files assume `scripts/` and `paper/` live at the project root (matching the project layout described in this skill). Tweak the paths at the top of each script if your project uses a different layout.
+
+Don't reimplement from scratch unless the project's stack (e.g. non-Python) requires it.
 
 ## Related Skills
 

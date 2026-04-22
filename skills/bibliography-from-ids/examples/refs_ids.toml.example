@@ -1,0 +1,60 @@
+# Template for paper/refs_ids.toml — the only human-edited source file for a
+# paper's bibliography. Rename to `refs_ids.toml` and replace the sample
+# entries below with your own.
+#
+# Each [[cite]] is a citation key + ONE authoritative identifier + a claim.
+# Run `uv run python scripts/build_bib.py` to resolve identifiers into
+# paper/refs.bib via arXiv / Crossref / ACL Anthology APIs.
+#
+# Identifier precedence when more than one is given:
+#   acl > doi > arxiv > manual
+# (Published venue metadata is preferred over preprint metadata.)
+
+# --- arXiv preprint (most common case) ---
+[[cite]]
+key   = "vaswani2017attention"
+arxiv = "1706.03762"
+claim = "Transformer architecture; Section 3.2 defines scaled dot-product attention."
+
+# --- Published at an ACL-family venue (EACL / ACL / EMNLP / NAACL / TACL) ---
+# Use the ACL Anthology ID (from the paper's anthology URL) in preference to
+# the arXiv ID — the published entry is @inproceedings with full venue metadata.
+[[cite]]
+key   = "devlin2019bert"
+acl   = "N19-1423"
+arxiv = "1810.04805"   # preprint fallback; acl takes precedence
+claim = "BERT pretraining via masked language modeling; §3.1."
+
+# --- Published in a journal with a DOI ---
+[[cite]]
+key   = "smith2020somepaper"
+doi   = "10.1234/xyz.5678"
+claim = "Specific claim about results in Table 2."
+
+# --- Corporate / team author artifact on arXiv ---
+# arXiv sometimes records a team name (e.g. "Qwen", "Meta AI") as the
+# first "author", which pushes natbib's short-label off the expected
+# human first-author. Filter with skip_authors:
+[[cite]]
+key   = "teampaper2024big"
+arxiv = "2412.15115"
+skip_authors = ["Qwen"]   # drop the corporate author-artifact
+claim = "Technical details; Table 1 lists model context windows."
+
+# --- Manual entry (paper with no stable digital identifier) ---
+# Use sparingly. Each manual entry reintroduces the fabrication risk this
+# system is designed to prevent. Good cases: OpenAI / Anthropic tech
+# reports, old papers not indexed by DOI.
+[[cite]]
+key   = "author2019techreport"
+manual = true
+entry = """
+@techreport{author2019techreport,
+  author      = {First Author and Second Author},
+  title       = {Some Technical Report Title},
+  institution = {Some Lab},
+  year        = {2019},
+  url         = {https://example.org/techreport.pdf}
+}
+"""
+claim = "Verified against the PDF at the URL above."

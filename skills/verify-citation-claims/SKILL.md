@@ -141,12 +141,20 @@ For each flagged item, the fix belongs in one of three places — be clear about
 
 When in doubt, ask the user which of the three to apply. Some disagreements are judgment calls (e.g., whether a paper's Shannon-entropy diversity measure "typically operates at the surface level" — arguably yes in spirit, arguably no in letter).
 
-## Worked Example (2026-04-21, ICL Diversity Paper)
+## Worked Example
 
-- 12 citations. Dispatched 12 parallel subagents (one per citation), each with the template above adapted to the specific claim.
-- ~2 minutes wall-clock. Report in `/home/cs29824/matthew/icl-diversity/paper/citation_verification_report.md`.
-- Findings: 4 fabricated author lists (bib-side), 1 unsupported claim (cite-side), 1 prose-side factual error (Qwen 32K → 128K), 1 incorrect journal volume (Crutchfield 15 → 13), 4 title typos, several minor issues.
-- Bib-side issues fixed by the `bibliography-from-ids` tool. Prose-side issues fixed by hand per the skill's Step 5. Cite-side issue (Zhang→Holtzman swap) combined both.
+A sanitized example audit report ships with this skill at
+`examples/example_report.md`. It shows the expected output format:
+summary table, per-citation detailed findings, items-needing-review,
+items-that-are-fine, and papers-unable-to-access sections.
+
+The real 2026-04-21 audit that motivated this skill (12 citations,
+2 minutes wall-clock via parallel subagents, 4 fabricated author lists
+found) followed the same template. Findings were routed per Step 5:
+bib-side fixes via `bibliography-from-ids`, prose-side factual errors
+(e.g. a wrong context-window number) via hand-edit of the .tex, and one
+cite-side fix (citation didn't support its claim) via a paper-swap that
+touched both the bib and the `\cite{}` site.
 
 ## Interaction with `bibliography-from-ids`
 
