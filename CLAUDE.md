@@ -53,3 +53,24 @@ Before any git commit or push, run `git config user.name` to confirm the identit
 # Claude Code Skills
 
 When creating skills, always use the directory convention: `~/.claude/skills/<skill-name>/SKILL.md`. Never create a flat file like `~/.claude/skills/<skill-name>.md` — it will be silently ignored.
+
+# Paper writing: inline numbers come from scripts, never from memory
+
+Every number cited in a paper's prose (abstract, captions, discussion, inline stats in any section) must resolve through a script-generated source — either an `\input{}`'d table or a `\newcommand{\macroName}{value}` macro emitted by a build script. Never hand-type a number into prose. This is the same discipline as `bibliography-from-ids`: the data has one source of truth, the script reads it, and the document references the result by name.
+
+The standard pattern:
+1. A build script (e.g. `scripts/build_paper_macros.py`) reads the authoritative data files (JSONs, CSVs, other generated tables) and writes a single `results/tables/paper_macros.tex` file containing one `\newcommand` per inline scalar.
+2. The paper `\input`s it once near the top. Prose writes `\crossmodeQwenDiagMean` instead of `60.5`.
+3. A unit test asserts (a) every paper-referenced macro is defined in the generated file, (b) forbidden hand-typed substrings that were replaced no longer appear — regression guard against re-introduction.
+
+The `import-content` skill covers the script-to-document pattern; apply it to inline scalars, not just tables. When auditing a paper for the first time, grep for digit sequences in prose and treat each unexplained one as a potential hand-typed number.
+
+# "Multi-pass" in a causal LM is a confusion, not an alternative
+
+In a causal language model, `log P(token at position i | preceding tokens)` depends only on the model and positions `< i`. Running n forward passes with growing prefixes ("multi-pass") therefore computes exactly the same per-token log-probs as a single forward pass over the full concatenation — but wastes O(n²) FLOPs for zero informational benefit. Pass n already contains everything from passes 1..n-1 for free, because causal attention cannot see future tokens.
+
+Treat "multi-pass" as a red flag in code, prose, and investigation reports:
+- Do **not** compare single-pass against multi-pass as if one were ground truth. Any difference reflects tokenization choices (e.g., BPE merges at boundaries), not a bias. Single-pass IS the metric by definition.
+- Do **not** write "distortion", "bias", or "error" framings of SP–MP differences.
+- **Flag** multi-pass code when you find it (add a header comment explaining the above, or open a follow-up issue); do not silently delete it — leave a trail so future readers learn from the confusion. Similarly flag any report or test that treats multi-pass as a baseline.
+- If a pre-existing test asserts SP ≈ MP, flag it as tautological. When safe, replace it with direct tests of boundary detection and extraction.

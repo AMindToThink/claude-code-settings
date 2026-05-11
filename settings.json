@@ -52,9 +52,60 @@
       "Bash(which uv)",
       "Grep",
       "Bash(~/.claude/.claude-tools/search-claude-logs.py *)",
-      "Bash(git commit -m *)"
+      "Bash(git commit -m *)",
+      "WebFetch(domain:www.alignmentforum.org)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://www.alignmentforum.org/posts/eJGptPbbFPZGLpjsp/highly-opinionated-advice-on-how-to-write-ml-papers\" -o /tmp/ml_paper_post.html)",
+      "Bash(curl -fsS -o /dev/null -A \"Mozilla/5.0\" -w \"%{http_code}\\\\n\" \"https://www.alignmentforum.org/posts/eJGptPbbFPZGLpjsp/highly-opinionated-advice-on-how-to-write-ml-papers\")",
+      "WebFetch(domain:aclanthology.org)",
+      "mcp__claude_ai_Hugging_Face__paper_search",
+      "Bash(curl -sL \"https://ar5iv.labs.arxiv.org/html/1510.03055\" -o /tmp/li2016_diversity.html)",
+      "Bash(curl -sL \"https://ar5iv.labs.arxiv.org/html/1809.05972\" -o /tmp/aim_paper.html)",
+      "Bash(latexmk -pdf)",
+      "Bash(latexmk -pdf in_context_diversity_metric.tex)",
+      "Bash(git check-ignore *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(/home/cs29824/.local/bin/claude --version)",
+      "Bash(bash -c 'source ~/.bashrc && echo $PATH | tr \":\" \"\\\\n\" | grep -F \"$HOME/.local/bin\" && which claude')",
+      "Bash(git ls-tree *)",
+      "Bash(pdfinfo \"Crosscoders_Mech_Interp__Paper \\(4\\).pdf\")",
+      "Bash(cd /home/cs29824/andre/xcdr3/docs && ls -la \"Crosscoders_Mech_Interp__Paper \\(1\\).zip\" && unzip -o \"Crosscoders_Mech_Interp__Paper \\(1\\).zip\" -d /tmp/paper_src > /tmp/unzip.log && tail -5 /tmp/unzip.log && echo \"---\" && ls /tmp/paper_src/)",
+      "Bash(xargs -I{} sh -c 'head -1 \"{}\" 2>/dev/null | python3 -c \"import sys,json; r=json.loads\\(sys.stdin.read\\(\\)\\) if sys.stdin else None; print\\(r.get\\(\\\\\"steer_neuron_indices\\\\\"\\) if r else None\\)\" 2>/dev/null')",
+      "Bash(sed -n '120,145p' run_steering_eval.py)",
+      "Bash(sed -n '290,320p' run_steering_eval.py)",
+      "Bash(nvidia-smi --query-gpu=name,memory.free --format=csv)",
+      "Bash(uv --version)",
+      "Bash(sed -n '466,495p' \"results/sweep_eval \\(1\\).py\")",
+      "Bash(sed -n '925,955p' \"results/sweep_eval \\(1\\).py\")",
+      "Bash(ls scripts/)",
+      "Bash(uv run *)",
+      "Bash(echo \"launched pid=$!\")",
+      "Bash(ps -p 769379 -o stat,pcpu,pmem,etime)",
+      "Bash(nvidia-smi --query-gpu=index,memory.used,utilization.gpu --format=csv)",
+      "Bash(ps -p 769379 -o stat,etime)",
+      "Bash(ps -p 769379 -o stat,pcpu,etime)",
+      "Bash(ps -e --pid 769379 -o pid,ppid,cmd,etime)",
+      "Read(//proc/769379/**)",
+      "Read(//proc/769379/fd/**)",
+      "Bash(ps -p 769379 -o etime=)",
+      "Bash(nvidia-smi --query-compute-apps=pid,used_memory --format=csv)",
+      "Bash(sudo -n cat /proc/769379/stack)",
+      "Bash(pdflatex -interaction=nonstopmode -halt-on-error main.tex)",
+      "Bash(tlmgr install *)",
+      "Bash(pdflatex -interaction=nonstopmode main.tex)",
+      "Bash(bibtex main *)",
+      "Bash(pdftk main.pdf cat 11 output /home/cs29824/andre/xcdr3/docs/Crosscoders_Paper_audited_fig5.pdf)",
+      "Bash(pdfseparate -f 11 -l 11 main.pdf /home/cs29824/andre/xcdr3/docs/Crosscoders_Paper_audited_fig5.pdf)",
+      "Bash(pdftoppm -r 130 -f 11 -l 11 main.pdf /tmp/audit_fig5)",
+      "Bash(convert /tmp/audit_fig5-11.ppm /tmp/audit_fig5.png)",
+      "Bash(pdftoppm -png -r 130 -f 11 -l 11 \"/tmp/paper_src/Crosscoders Paper/main.pdf\" /tmp/audit_fig5_png)",
+      "Bash(pdftotext -layout main.pdf -)",
+      "Bash(pdftoppm -png -r 130 -f 12 -l 12 main.pdf /tmp/fig5_fixed)"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "/tmp"
+    ]
   },
   "hooks": {
     "Notification": [
@@ -126,9 +177,14 @@
       }
     }
   },
+  "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "editorMode": "vim",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
-  },
-  "skipAutoPermissionPrompt": true
+  }
 }

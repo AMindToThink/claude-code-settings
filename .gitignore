@@ -23,3 +23,5 @@ mcp-needs-auth-cache.json
 .credentials.json
 settings.local.json
 sessions/
+.last-cleanup
+policy-limits.json

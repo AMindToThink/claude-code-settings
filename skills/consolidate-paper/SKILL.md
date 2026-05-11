@@ -2,6 +2,7 @@
 name: consolidate-paper
 description: Consolidate scattered research notes, logs, experiment outputs, and submodule docs into a single living research paper. Use when the user wants to pull together multiple source documents into one structured paper.
 argument-hint: "[output-path]"
+disable-model-invocation: true
 ---
 
 ## Consolidate Research into a Living Paper
