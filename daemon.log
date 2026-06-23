@@ -1,0 +1,823 @@
+[2026-05-22T20:42:59.537Z] [supervisor] ─── daemon start ─── version=2.1.148 pid=998376 origin=transient
+[2026-05-22T20:42:59.593Z] [supervisor] auth: scheduling proactive refresh in 26244s
+[2026-05-22T20:42:59.600Z] [supervisor] auth: scheduling proactive refresh in 26244s
+[2026-05-22T20:42:59.604Z] [supervisor] workers=0
+[2026-05-22T20:42:59.692Z] [bg] bg spare spawned host pid=998397
+[2026-05-22T20:43:04.704Z] [bg] bg claimed-spare 062302e7 (slash)
+[2026-05-22T20:43:04.710Z] [bg] bg spare spawned host pid=998424
+[2026-05-22T20:45:06.966Z] [bg] bg claimed-spare 9150e637 (spare)
+[2026-05-22T20:45:06.974Z] [bg] bg spare spawned host pid=998939
+[2026-05-22T21:45:59.739Z] [bg] bg settled 9150e637 (done)
+[2026-05-22T22:09:59.685Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.148 → /home/cs29824/.local/share/claude/versions/2.1.149) — self-restarting for upgrade
+[2026-05-22T22:09:59.692Z] [supervisor] shutting down
+[2026-05-22T22:10:00.221Z] [supervisor] ─── daemon start ─── version=2.1.149 pid=1033945 origin=transient
+[2026-05-22T22:10:00.267Z] [supervisor] ─── daemon start ─── version=2.1.149 pid=1033986 origin=transient
+[2026-05-22T22:10:00.272Z] [supervisor] another daemon is already running (pid=1033945, version=2.1.149, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-22T22:10:00.289Z] [supervisor] auth: scheduling proactive refresh in 21023s
+[2026-05-22T22:10:00.304Z] [supervisor] auth: scheduling proactive refresh in 21023s
+[2026-05-22T22:10:00.313Z] [supervisor] workers=0
+[2026-05-22T22:10:00.352Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-22T22:10:00.356Z] [bg] bg orphan-spare reap: 1
+[2026-05-22T22:10:00.377Z] [bg] bg spare spawned host pid=1034022
+[2026-05-22T22:15:55.675Z] [bg] bg claimed-spare 9150e637 (fleet)
+[2026-05-22T22:15:55.680Z] [bg] bg spare spawned host pid=1035713
+[2026-05-22T22:15:55.694Z] [bg] bg claimed-spare b3fd15d3 (spare)
+[2026-05-22T22:15:55.698Z] [bg] bg spare spawned host pid=1035727
+[2026-05-22T23:16:00.534Z] [bg] bg settled b3fd15d3 (done)
+[2026-05-23T04:00:23.710Z] [supervisor] auth: proactive refresh starting
+[2026-05-23T04:00:23.919Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-23T04:00:23.919Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-23T04:06:00.504Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.149 → /home/cs29824/.local/share/claude/versions/2.1.150) — self-restarting for upgrade
+[2026-05-23T04:06:00.505Z] [supervisor] shutting down
+[2026-05-23T04:06:00.942Z] [supervisor] ─── daemon start ─── version=2.1.150 pid=1135551 origin=transient
+[2026-05-23T04:06:00.942Z] [supervisor] ─── daemon start ─── version=2.1.150 pid=1135527 origin=transient
+[2026-05-23T04:06:00.983Z] [supervisor] another daemon won the lock race (pid=1135551) — exiting
+[2026-05-23T04:06:00.993Z] [supervisor] auth: scheduling proactive refresh in 28223s
+[2026-05-23T04:06:01.011Z] [supervisor] auth: scheduling proactive refresh in 28223s
+[2026-05-23T04:06:01.014Z] [supervisor] workers=0
+[2026-05-23T04:06:01.080Z] [bg] bg adopt: adopted=2 respawned=0 dead=0
+[2026-05-23T04:06:01.084Z] [bg] bg orphan-spare reap: 1
+[2026-05-23T04:06:01.135Z] [bg] bg spare spawned host pid=1135581
+[2026-05-23T07:09:01.232Z] [bg] bg settled 9150e637 (done)
+[2026-05-23T11:56:23.907Z] [supervisor] auth: proactive refresh starting
+[2026-05-23T11:56:24.135Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-23T11:56:24.135Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-23T19:52:24.124Z] [supervisor] auth: proactive refresh starting
+[2026-05-23T19:52:24.419Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-23T19:52:24.420Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-24T03:48:24.411Z] [supervisor] auth: proactive refresh starting
+[2026-05-24T03:48:24.614Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-24T03:48:24.614Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-24T10:13:23.043Z] [bg] bg claimed-spare 544344b7 (spare)
+[2026-05-24T10:13:23.054Z] [bg] bg spare spawned host pid=1543517
+[2026-05-24T10:13:27.299Z] [bg] bg settled 544344b7 (killed)
+[2026-05-24T11:44:24.604Z] [supervisor] auth: proactive refresh starting
+[2026-05-24T11:44:24.813Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-24T11:44:24.813Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-24T19:40:24.802Z] [supervisor] auth: proactive refresh starting
+[2026-05-24T19:40:25.036Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-24T19:40:25.036Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-25T03:36:25.025Z] [supervisor] auth: proactive refresh starting
+[2026-05-25T03:36:25.260Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-25T03:36:25.260Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-25T11:32:25.250Z] [supervisor] auth: proactive refresh starting
+[2026-05-25T11:32:25.483Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-25T11:32:25.483Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-25T19:28:25.473Z] [supervisor] auth: proactive refresh starting
+[2026-05-25T19:28:25.684Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-25T19:28:25.684Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-26T03:24:25.676Z] [supervisor] auth: proactive refresh starting
+[2026-05-26T03:24:25.908Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-26T03:24:25.908Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-26T11:20:25.901Z] [supervisor] auth: proactive refresh starting
+[2026-05-26T11:20:26.170Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-26T11:20:26.170Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-26T19:16:26.156Z] [supervisor] auth: proactive refresh starting
+[2026-05-26T19:16:26.406Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-26T19:16:26.406Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-27T01:13:04.516Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.150 → /home/cs29824/.local/share/claude/versions/2.1.152) — self-restarting for upgrade
+[2026-05-27T01:13:04.537Z] [supervisor] shutting down
+[2026-05-27T01:13:05.059Z] [supervisor] ─── daemon start ─── version=2.1.152 pid=2349797 origin=transient
+[2026-05-27T01:13:05.059Z] [supervisor] ─── daemon start ─── version=2.1.152 pid=2349808 origin=transient
+[2026-05-27T01:13:05.110Z] [supervisor] another daemon won the lock race (pid=2349797) — exiting
+[2026-05-27T01:13:05.108Z] [supervisor] auth: scheduling proactive refresh in 7161s
+[2026-05-27T01:13:05.123Z] [supervisor] auth: scheduling proactive refresh in 7161s
+[2026-05-27T01:13:05.127Z] [supervisor] workers=0
+[2026-05-27T01:13:05.180Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-27T01:13:05.183Z] [bg] bg orphan-spare reap: 1
+[2026-05-27T01:13:05.206Z] [bg] bg spare spawned host pid=2349838
+[2026-05-27T01:20:05.138Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.152 → /home/cs29824/.local/share/claude/versions/2.1.150) — self-restarting for upgrade
+[2026-05-27T01:20:05.140Z] [supervisor] shutting down
+[2026-05-27T01:20:05.597Z] [supervisor] ─── daemon start ─── version=2.1.150 pid=2351148 origin=transient
+[2026-05-27T01:20:05.597Z] [supervisor] ─── daemon start ─── version=2.1.150 pid=2351152 origin=transient
+[2026-05-27T01:20:05.644Z] [supervisor] another daemon won the lock race (pid=2351148) — exiting
+[2026-05-27T01:20:05.647Z] [supervisor] auth: scheduling proactive refresh in 6741s
+[2026-05-27T01:20:05.649Z] [supervisor] auth: scheduling proactive refresh in 6741s
+[2026-05-27T01:20:05.652Z] [supervisor] workers=0
+[2026-05-27T01:20:05.704Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-27T01:20:05.707Z] [bg] bg orphan-spare reap: 1
+[2026-05-27T01:20:05.725Z] [bg] bg spare spawned host pid=2351257
+[2026-05-27T01:36:05.663Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.150 → /home/cs29824/.local/share/claude/versions/2.1.152) — self-restarting for upgrade
+[2026-05-27T01:36:05.671Z] [supervisor] shutting down
+[2026-05-27T01:36:06.163Z] [supervisor] ─── daemon start ─── version=2.1.152 pid=2356903 origin=transient
+[2026-05-27T01:36:06.207Z] [supervisor] auth: scheduling proactive refresh in 5780s
+[2026-05-27T01:36:06.210Z] [supervisor] auth: scheduling proactive refresh in 5780s
+[2026-05-27T01:36:06.214Z] [supervisor] workers=0
+[2026-05-27T01:36:06.191Z] [supervisor] ─── daemon start ─── version=2.1.152 pid=2356939 origin=transient
+[2026-05-27T01:36:06.251Z] [supervisor] another daemon is already running (pid=2356903, version=2.1.152, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-27T01:36:06.296Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-27T01:36:06.301Z] [bg] bg orphan-spare reap: 1
+[2026-05-27T01:36:06.339Z] [bg] bg spare spawned host pid=2356995
+[2026-05-27T03:12:26.395Z] [supervisor] auth: proactive refresh starting
+[2026-05-27T03:12:26.599Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-27T03:12:26.599Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-27T11:08:26.585Z] [supervisor] auth: proactive refresh starting
+[2026-05-27T11:08:26.804Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-27T11:08:26.804Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-27T19:04:26.793Z] [supervisor] auth: proactive refresh starting
+[2026-05-27T19:04:27.021Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-27T19:04:27.021Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-28T01:06:06.668Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.152 → /home/cs29824/.local/share/claude/versions/2.1.153) — self-restarting for upgrade
+[2026-05-28T01:06:06.679Z] [supervisor] shutting down
+[2026-05-28T01:06:07.177Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2644182 origin=transient
+[2026-05-28T01:06:07.220Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2644164 origin=transient
+[2026-05-28T01:06:07.226Z] [supervisor] another daemon is already running (pid=2644182, version=2.1.153, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T01:06:07.230Z] [supervisor] auth: scheduling proactive refresh in 6860s
+[2026-05-28T01:06:07.234Z] [supervisor] auth: scheduling proactive refresh in 6860s
+[2026-05-28T01:06:07.241Z] [supervisor] workers=0
+[2026-05-28T01:06:07.277Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T01:06:07.281Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T01:06:07.348Z] [bg] bg spare spawned host pid=2644231
+[2026-05-28T03:00:27.008Z] [supervisor] auth: proactive refresh starting
+[2026-05-28T03:00:27.226Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-28T03:00:27.226Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-28T10:56:27.213Z] [supervisor] auth: proactive refresh starting
+[2026-05-28T10:56:27.432Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-28T10:56:27.432Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-28T16:50:07.471Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.153 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T16:50:07.495Z] [supervisor] shutting down
+[2026-05-28T16:50:08.042Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2879200 origin=transient
+[2026-05-28T16:50:08.098Z] [supervisor] auth: scheduling proactive refresh in 7339s
+[2026-05-28T16:50:08.101Z] [supervisor] auth: scheduling proactive refresh in 7339s
+[2026-05-28T16:50:08.104Z] [supervisor] workers=0
+[2026-05-28T16:50:08.077Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2879175 origin=transient
+[2026-05-28T16:50:08.153Z] [supervisor] another daemon won the lock race (pid=2879200) — exiting
+[2026-05-28T16:50:08.176Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T16:50:08.181Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T16:50:08.223Z] [bg] bg spare spawned host pid=2879233
+[2026-05-28T17:06:08.127Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.153) — self-restarting for upgrade
+[2026-05-28T17:06:08.133Z] [supervisor] shutting down
+[2026-05-28T17:06:08.608Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2882161 origin=transient
+[2026-05-28T17:06:08.630Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2882192 origin=transient
+[2026-05-28T17:06:08.661Z] [supervisor] auth: scheduling proactive refresh in 6379s
+[2026-05-28T17:06:08.668Z] [supervisor] auth: scheduling proactive refresh in 6379s
+[2026-05-28T17:06:08.672Z] [supervisor] another daemon won the lock race (pid=2882161) — exiting
+[2026-05-28T17:06:08.672Z] [supervisor] workers=0
+[2026-05-28T17:06:08.709Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T17:06:08.712Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T17:06:08.748Z] [bg] bg spare spawned host pid=2882239
+[2026-05-28T17:20:08.683Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.153 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T17:20:08.686Z] [supervisor] shutting down
+[2026-05-28T17:20:09.159Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2884958 origin=transient
+[2026-05-28T17:20:09.159Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2884992 origin=transient
+[2026-05-28T17:20:09.222Z] [supervisor] another daemon won the lock race (pid=2884958) — exiting
+[2026-05-28T17:20:09.222Z] [supervisor] auth: scheduling proactive refresh in 5538s
+[2026-05-28T17:20:09.232Z] [supervisor] auth: scheduling proactive refresh in 5538s
+[2026-05-28T17:20:09.235Z] [supervisor] workers=0
+[2026-05-28T17:20:09.297Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T17:20:09.301Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T17:20:09.325Z] [bg] bg spare spawned host pid=2885063
+[2026-05-28T17:36:09.247Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.153) — self-restarting for upgrade
+[2026-05-28T17:36:09.251Z] [supervisor] shutting down
+[2026-05-28T17:36:09.699Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2888183 origin=transient
+[2026-05-28T17:36:09.736Z] [supervisor] auth: scheduling proactive refresh in 4578s
+[2026-05-28T17:36:09.744Z] [supervisor] auth: scheduling proactive refresh in 4578s
+[2026-05-28T17:36:09.749Z] [supervisor] workers=0
+[2026-05-28T17:36:09.771Z] [supervisor] ─── daemon start ─── version=2.1.153 pid=2888214 origin=transient
+[2026-05-28T17:36:09.777Z] [supervisor] another daemon is already running (pid=2888183, version=2.1.153, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T17:36:09.824Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T17:36:09.831Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T17:36:09.868Z] [bg] bg spare spawned host pid=2888289
+[2026-05-28T17:50:09.765Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.153 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T17:50:09.767Z] [supervisor] shutting down
+[2026-05-28T17:50:10.220Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2891030 origin=transient
+[2026-05-28T17:50:10.229Z] [supervisor] auth: scheduling proactive refresh in 3737s
+[2026-05-28T17:50:10.285Z] [supervisor] auth: scheduling proactive refresh in 3737s
+[2026-05-28T17:50:10.288Z] [supervisor] workers=0
+[2026-05-28T17:50:10.269Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2891013 origin=transient
+[2026-05-28T17:50:10.309Z] [supervisor] another daemon is already running (pid=2891030, version=2.1.154, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T17:50:10.359Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-28T17:50:10.363Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T17:50:10.384Z] [bg] bg spare spawned host pid=2891100
+[2026-05-28T18:52:27.423Z] [supervisor] auth: proactive refresh starting
+[2026-05-28T18:52:27.638Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-28T18:52:27.638Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-28T19:54:05.773Z] [bg] bg claimed-spare 7f4ed490 (spare)
+[2026-05-28T19:54:05.794Z] [bg] bg spare spawned host pid=2918410
+[2026-05-28T19:54:59.094Z] [bg] bg claimed-spare 6c959b90 (fleet)
+[2026-05-28T19:54:59.103Z] [bg] bg spare spawned host pid=2918822
+[2026-05-28T19:56:31.519Z] [bg] bg settled 7f4ed490 (killed)
+[2026-05-28T21:33:53.499Z] [bg] bg claimed-spare 7e6bc5a7 (slash)
+[2026-05-28T21:33:53.509Z] [bg] bg spare spawned host pid=2946755
+[2026-05-28T21:33:56.863Z] [bg] bg claimed-spare 37e02c60 (spare)
+[2026-05-28T21:33:56.871Z] [bg] bg spare spawned host pid=2946931
+[2026-05-28T21:34:10.368Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T21:34:10.369Z] [supervisor] shutting down
+[2026-05-28T21:34:10.851Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2947127 origin=transient
+[2026-05-28T21:34:10.890Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2947139 origin=transient
+[2026-05-28T21:34:10.897Z] [supervisor] another daemon is already running (pid=2947127, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T21:34:10.902Z] [supervisor] auth: scheduling proactive refresh in 18857s
+[2026-05-28T21:34:10.904Z] [supervisor] auth: scheduling proactive refresh in 18857s
+[2026-05-28T21:34:10.907Z] [supervisor] workers=0
+[2026-05-28T21:34:10.978Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-28T21:34:10.982Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T21:34:11.028Z] [bg] bg spare spawned host pid=2947184
+[2026-05-28T21:36:10.912Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T21:36:10.913Z] [supervisor] shutting down
+[2026-05-28T21:36:11.329Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2947864 origin=transient
+[2026-05-28T21:36:11.375Z] [supervisor] auth: scheduling proactive refresh in 18736s
+[2026-05-28T21:36:11.388Z] [supervisor] auth: scheduling proactive refresh in 18736s
+[2026-05-28T21:36:11.392Z] [supervisor] workers=0
+[2026-05-28T21:36:11.459Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-28T21:36:11.463Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T21:36:11.501Z] [bg] bg spare spawned host pid=2947978
+[2026-05-28T21:36:31.079Z] [bg] bg claimed-spare 50bc784f (spare)
+[2026-05-28T21:36:31.089Z] [bg] bg spare spawned host pid=2948071
+[2026-05-28T21:37:11.396Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T21:37:11.397Z] [supervisor] shutting down
+[2026-05-28T21:37:11.852Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2948346 origin=transient
+[2026-05-28T21:37:11.904Z] [supervisor] auth: scheduling proactive refresh in 18676s
+[2026-05-28T21:37:11.909Z] [supervisor] auth: scheduling proactive refresh in 18676s
+[2026-05-28T21:37:11.913Z] [supervisor] workers=0
+[2026-05-28T21:37:11.952Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T21:37:11.957Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T21:37:12.039Z] [bg] bg spare spawned host pid=2948387
+[2026-05-28T21:40:11.921Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T21:40:11.922Z] [supervisor] shutting down
+[2026-05-28T21:40:12.316Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2949740 origin=transient
+[2026-05-28T21:40:12.369Z] [supervisor] auth: scheduling proactive refresh in 18495s
+[2026-05-28T21:40:12.375Z] [supervisor] auth: scheduling proactive refresh in 18495s
+[2026-05-28T21:40:12.379Z] [supervisor] workers=0
+[2026-05-28T21:40:12.409Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2949742 origin=transient
+[2026-05-28T21:40:12.414Z] [supervisor] another daemon is already running (pid=2949740, version=2.1.154, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T21:40:12.446Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T21:40:12.449Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T21:40:12.501Z] [bg] bg spare spawned host pid=2949867
+[2026-05-28T22:12:12.429Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T22:12:12.439Z] [supervisor] shutting down
+[2026-05-28T22:12:12.908Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2958532 origin=transient
+[2026-05-28T22:12:12.933Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2958565 origin=transient
+[2026-05-28T22:12:12.961Z] [supervisor] auth: scheduling proactive refresh in 16575s
+[2026-05-28T22:12:12.965Z] [supervisor] auth: scheduling proactive refresh in 16575s
+[2026-05-28T22:12:12.969Z] [supervisor] workers=0
+[2026-05-28T22:12:13.004Z] [supervisor] another daemon won the lock race (pid=2958532) — exiting
+[2026-05-28T22:12:13.040Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:12:13.043Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:12:13.115Z] [bg] bg spare spawned host pid=2958623
+[2026-05-28T22:13:12.974Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T22:13:12.977Z] [supervisor] shutting down
+[2026-05-28T22:13:13.399Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2958705 origin=transient
+[2026-05-28T22:13:13.409Z] [supervisor] auth: scheduling proactive refresh in 16514s
+[2026-05-28T22:13:13.437Z] [supervisor] auth: scheduling proactive refresh in 16514s
+[2026-05-28T22:13:13.439Z] [supervisor] workers=0
+[2026-05-28T22:13:13.503Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:13:13.507Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:13:13.552Z] [bg] bg spare spawned host pid=2958836
+[2026-05-28T22:36:35.009Z] [bg] bg settled 50bc784f (killed)
+[2026-05-28T22:36:35.609Z] [bg] bg claimed-spare 80fcb3cd (spare)
+[2026-05-28T22:36:35.624Z] [bg] bg spare spawned host pid=2964841
+[2026-05-28T22:37:13.485Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T22:37:13.486Z] [supervisor] shutting down
+[2026-05-28T22:37:13.913Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2965091 origin=transient
+[2026-05-28T22:37:13.923Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2965095 origin=transient
+[2026-05-28T22:37:13.955Z] [supervisor] another daemon is already running (pid=2965091, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T22:37:13.962Z] [supervisor] auth: scheduling proactive refresh in 15074s
+[2026-05-28T22:37:13.968Z] [supervisor] auth: scheduling proactive refresh in 15074s
+[2026-05-28T22:37:13.972Z] [supervisor] workers=0
+[2026-05-28T22:37:13.996Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:37:13.999Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:37:14.047Z] [bg] bg spare spawned host pid=2965155
+[2026-05-28T22:40:13.975Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T22:40:13.975Z] [supervisor] shutting down
+[2026-05-28T22:40:14.367Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2965778 origin=transient
+[2026-05-28T22:40:14.414Z] [supervisor] auth: scheduling proactive refresh in 14893s
+[2026-05-28T22:40:14.417Z] [supervisor] auth: scheduling proactive refresh in 14893s
+[2026-05-28T22:40:14.419Z] [supervisor] workers=0
+[2026-05-28T22:40:14.487Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:40:14.490Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:40:14.539Z] [bg] bg spare spawned host pid=2965863
+[2026-05-28T22:42:14.426Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T22:42:14.430Z] [supervisor] shutting down
+[2026-05-28T22:42:14.825Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2966172 origin=transient
+[2026-05-28T22:42:14.870Z] [supervisor] auth: scheduling proactive refresh in 14773s
+[2026-05-28T22:42:14.874Z] [supervisor] auth: scheduling proactive refresh in 14773s
+[2026-05-28T22:42:14.880Z] [supervisor] workers=0
+[2026-05-28T22:42:14.914Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:42:14.918Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:42:14.990Z] [bg] bg spare spawned host pid=2966291
+[2026-05-28T22:43:14.884Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T22:43:14.885Z] [supervisor] shutting down
+[2026-05-28T22:43:15.269Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2966378 origin=transient
+[2026-05-28T22:43:15.318Z] [supervisor] auth: scheduling proactive refresh in 14712s
+[2026-05-28T22:43:15.330Z] [supervisor] auth: scheduling proactive refresh in 14712s
+[2026-05-28T22:43:15.334Z] [supervisor] workers=0
+[2026-05-28T22:43:15.407Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:43:15.411Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:43:15.464Z] [bg] bg spare spawned host pid=2966492
+[2026-05-28T22:50:15.360Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T22:50:15.365Z] [supervisor] shutting down
+[2026-05-28T22:50:15.761Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2968052 origin=transient
+[2026-05-28T22:50:15.802Z] [supervisor] auth: scheduling proactive refresh in 14292s
+[2026-05-28T22:50:15.805Z] [supervisor] auth: scheduling proactive refresh in 14292s
+[2026-05-28T22:50:15.808Z] [supervisor] workers=0
+[2026-05-28T22:50:15.883Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T22:50:15.894Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T22:50:15.935Z] [bg] bg spare spawned host pid=2968129
+[2026-05-28T23:05:15.849Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T23:05:15.856Z] [supervisor] shutting down
+[2026-05-28T23:05:16.322Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2971642 origin=transient
+[2026-05-28T23:05:16.352Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2971604 origin=transient
+[2026-05-28T23:05:16.370Z] [supervisor] auth: scheduling proactive refresh in 13391s
+[2026-05-28T23:05:16.378Z] [supervisor] auth: scheduling proactive refresh in 13391s
+[2026-05-28T23:05:16.394Z] [supervisor] workers=0
+[2026-05-28T23:05:16.434Z] [supervisor] another daemon won the lock race (pid=2971642) — exiting
+[2026-05-28T23:05:16.462Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T23:05:16.465Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:05:16.527Z] [bg] bg spare spawned host pid=2971704
+[2026-05-28T23:12:16.424Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T23:12:16.425Z] [supervisor] shutting down
+[2026-05-28T23:12:16.872Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2973264 origin=transient
+[2026-05-28T23:12:16.914Z] [supervisor] auth: scheduling proactive refresh in 12971s
+[2026-05-28T23:12:16.920Z] [supervisor] auth: scheduling proactive refresh in 12971s
+[2026-05-28T23:12:16.925Z] [supervisor] workers=0
+[2026-05-28T23:12:16.997Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T23:12:17.007Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:12:17.051Z] [bg] bg spare spawned host pid=2973384
+[2026-05-28T23:13:16.930Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T23:13:16.930Z] [supervisor] shutting down
+[2026-05-28T23:13:17.331Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2973492 origin=transient
+[2026-05-28T23:13:17.372Z] [supervisor] auth: scheduling proactive refresh in 12910s
+[2026-05-28T23:13:17.373Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2973447 origin=transient
+[2026-05-28T23:13:17.378Z] [supervisor] another daemon is already running (pid=2973492, version=2.1.154, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T23:13:17.380Z] [supervisor] auth: scheduling proactive refresh in 12910s
+[2026-05-28T23:13:17.384Z] [supervisor] workers=0
+[2026-05-28T23:13:17.450Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T23:13:17.458Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:13:17.510Z] [bg] bg spare spawned host pid=2973600
+[2026-05-28T23:20:17.405Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T23:20:17.406Z] [supervisor] shutting down
+[2026-05-28T23:20:17.795Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2975314 origin=transient
+[2026-05-28T23:20:17.831Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2975352 origin=transient
+[2026-05-28T23:20:17.838Z] [supervisor] another daemon is already running (pid=2975314, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T23:20:17.844Z] [supervisor] auth: scheduling proactive refresh in 12490s
+[2026-05-28T23:20:17.846Z] [supervisor] auth: scheduling proactive refresh in 12490s
+[2026-05-28T23:20:17.849Z] [supervisor] workers=0
+[2026-05-28T23:20:17.936Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T23:20:17.940Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:20:17.987Z] [bg] bg spare spawned host pid=2975460
+[2026-05-28T23:35:17.890Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T23:35:17.894Z] [supervisor] shutting down
+[2026-05-28T23:35:18.358Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2979309 origin=transient
+[2026-05-28T23:35:18.358Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2979269 origin=transient
+[2026-05-28T23:35:18.410Z] [supervisor] auth: scheduling proactive refresh in 11589s
+[2026-05-28T23:35:18.412Z] [supervisor] auth: scheduling proactive refresh in 11589s
+[2026-05-28T23:35:18.418Z] [supervisor] another daemon won the lock race (pid=2979269) — exiting
+[2026-05-28T23:35:18.418Z] [supervisor] workers=0
+[2026-05-28T23:35:18.493Z] [bg] bg adopt: adopted=5 respawned=0 dead=0
+[2026-05-28T23:35:18.496Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:35:18.546Z] [bg] bg spare spawned host pid=2979387
+[2026-05-28T23:37:18.589Z] [bg] bg settled 80fcb3cd (done)
+[2026-05-28T23:42:18.440Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T23:42:18.441Z] [supervisor] shutting down
+[2026-05-28T23:42:18.900Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2980863 origin=transient
+[2026-05-28T23:42:18.939Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2980842 origin=transient
+[2026-05-28T23:42:18.945Z] [supervisor] another daemon is already running (pid=2980863, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-28T23:42:18.976Z] [supervisor] auth: scheduling proactive refresh in 11169s
+[2026-05-28T23:42:18.982Z] [supervisor] auth: scheduling proactive refresh in 11169s
+[2026-05-28T23:42:18.996Z] [supervisor] workers=0
+[2026-05-28T23:42:19.059Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-28T23:42:19.064Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:42:19.113Z] [bg] bg spare spawned host pid=2980958
+[2026-05-28T23:43:19.004Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-28T23:43:19.005Z] [supervisor] shutting down
+[2026-05-28T23:43:19.412Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2981014 origin=transient
+[2026-05-28T23:43:19.453Z] [supervisor] auth: scheduling proactive refresh in 11108s
+[2026-05-28T23:43:19.462Z] [supervisor] auth: scheduling proactive refresh in 11108s
+[2026-05-28T23:43:19.466Z] [supervisor] workers=0
+[2026-05-28T23:43:19.534Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-28T23:43:19.538Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:43:19.595Z] [bg] bg spare spawned host pid=2981145
+[2026-05-28T23:50:19.469Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-28T23:50:19.470Z] [supervisor] shutting down
+[2026-05-28T23:50:19.841Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2982619 origin=transient
+[2026-05-28T23:50:19.884Z] [supervisor] auth: scheduling proactive refresh in 10688s
+[2026-05-28T23:50:19.895Z] [supervisor] auth: scheduling proactive refresh in 10688s
+[2026-05-28T23:50:19.900Z] [supervisor] workers=0
+[2026-05-28T23:50:19.972Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-28T23:50:19.984Z] [bg] bg orphan-spare reap: 1
+[2026-05-28T23:50:20.022Z] [bg] bg spare spawned host pid=2982737
+[2026-05-29T00:05:19.917Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T00:05:19.919Z] [supervisor] shutting down
+[2026-05-29T00:05:20.366Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2986301 origin=transient
+[2026-05-29T00:05:20.392Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2986283 origin=transient
+[2026-05-29T00:05:20.402Z] [supervisor] another daemon is already running (pid=2986301, version=2.1.154, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-29T00:05:20.414Z] [supervisor] auth: scheduling proactive refresh in 9787s
+[2026-05-29T00:05:20.424Z] [supervisor] auth: scheduling proactive refresh in 9787s
+[2026-05-29T00:05:20.428Z] [supervisor] workers=0
+[2026-05-29T00:05:20.506Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:05:20.511Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:05:20.569Z] [bg] bg spare spawned host pid=2986429
+[2026-05-29T00:12:20.435Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T00:12:20.437Z] [supervisor] shutting down
+[2026-05-29T00:12:20.858Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2988301 origin=transient
+[2026-05-29T00:12:20.868Z] [supervisor] auth: scheduling proactive refresh in 9367s
+[2026-05-29T00:12:20.901Z] [supervisor] auth: scheduling proactive refresh in 9367s
+[2026-05-29T00:12:20.907Z] [supervisor] workers=0
+[2026-05-29T00:12:20.939Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:12:20.943Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:12:20.972Z] [bg] bg spare spawned host pid=2988416
+[2026-05-29T00:13:20.909Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T00:13:20.910Z] [supervisor] shutting down
+[2026-05-29T00:13:21.275Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2988470 origin=transient
+[2026-05-29T00:13:21.317Z] [supervisor] auth: scheduling proactive refresh in 9306s
+[2026-05-29T00:13:21.328Z] [supervisor] auth: scheduling proactive refresh in 9306s
+[2026-05-29T00:13:21.333Z] [supervisor] workers=0
+[2026-05-29T00:13:21.399Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:13:21.402Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:13:21.430Z] [bg] bg spare spawned host pid=2988606
+[2026-05-29T00:20:21.341Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T00:20:21.342Z] [supervisor] shutting down
+[2026-05-29T00:20:21.726Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2990100 origin=transient
+[2026-05-29T00:20:21.759Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2990108 origin=transient
+[2026-05-29T00:20:21.764Z] [supervisor] another daemon is already running (pid=2990100, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-29T00:20:21.781Z] [supervisor] auth: scheduling proactive refresh in 8886s
+[2026-05-29T00:20:21.791Z] [supervisor] auth: scheduling proactive refresh in 8886s
+[2026-05-29T00:20:21.795Z] [supervisor] workers=0
+[2026-05-29T00:20:21.857Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:20:21.870Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:20:21.908Z] [bg] bg spare spawned host pid=2990233
+[2026-05-29T00:35:21.808Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T00:35:21.811Z] [supervisor] shutting down
+[2026-05-29T00:35:22.243Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2993633 origin=transient
+[2026-05-29T00:35:22.288Z] [supervisor] auth: scheduling proactive refresh in 7985s
+[2026-05-29T00:35:22.295Z] [supervisor] auth: scheduling proactive refresh in 7985s
+[2026-05-29T00:35:22.298Z] [supervisor] workers=0
+[2026-05-29T00:35:22.323Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2993609 origin=transient
+[2026-05-29T00:35:22.329Z] [supervisor] another daemon is already running (pid=2993633, version=2.1.154, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-29T00:35:22.363Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:35:22.366Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:35:22.429Z] [bg] bg spare spawned host pid=2993737
+[2026-05-29T00:42:22.304Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T00:42:22.305Z] [supervisor] shutting down
+[2026-05-29T00:42:22.703Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2995264 origin=transient
+[2026-05-29T00:42:22.747Z] [supervisor] auth: scheduling proactive refresh in 7565s
+[2026-05-29T00:42:22.751Z] [supervisor] auth: scheduling proactive refresh in 7565s
+[2026-05-29T00:42:22.760Z] [supervisor] workers=0
+[2026-05-29T00:42:22.797Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:42:22.800Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:42:22.852Z] [bg] bg spare spawned host pid=2995382
+[2026-05-29T00:43:22.762Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T00:43:22.763Z] [supervisor] shutting down
+[2026-05-29T00:43:23.139Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=2995440 origin=transient
+[2026-05-29T00:43:23.181Z] [supervisor] auth: scheduling proactive refresh in 7504s
+[2026-05-29T00:43:23.184Z] [supervisor] auth: scheduling proactive refresh in 7504s
+[2026-05-29T00:43:23.189Z] [supervisor] workers=0
+[2026-05-29T00:43:23.261Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:43:23.266Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:43:23.318Z] [bg] bg spare spawned host pid=2995571
+[2026-05-29T00:50:23.199Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T00:50:23.200Z] [supervisor] shutting down
+[2026-05-29T00:50:23.576Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2997056 origin=transient
+[2026-05-29T00:50:23.604Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=2997057 origin=transient
+[2026-05-29T00:50:23.613Z] [supervisor] another daemon won the lock race (pid=2997057) — exiting
+[2026-05-29T00:50:23.621Z] [supervisor] auth: scheduling proactive refresh in 7084s
+[2026-05-29T00:50:23.665Z] [supervisor] auth: scheduling proactive refresh in 7084s
+[2026-05-29T00:50:23.668Z] [supervisor] workers=0
+[2026-05-29T00:50:23.718Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T00:50:23.722Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T00:50:23.793Z] [bg] bg spare spawned host pid=2997196
+[2026-05-29T01:05:23.682Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T01:05:23.683Z] [supervisor] shutting down
+[2026-05-29T01:05:24.085Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=3000595 origin=transient
+[2026-05-29T01:05:24.132Z] [supervisor] auth: scheduling proactive refresh in 6183s
+[2026-05-29T01:05:24.134Z] [supervisor] auth: scheduling proactive refresh in 6183s
+[2026-05-29T01:05:24.137Z] [supervisor] workers=0
+[2026-05-29T01:05:24.199Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T01:05:24.203Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T01:05:24.250Z] [bg] bg spare spawned host pid=3000717
+[2026-05-29T01:12:24.143Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T01:12:24.144Z] [supervisor] shutting down
+[2026-05-29T01:12:24.540Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=3002215 origin=transient
+[2026-05-29T01:12:24.549Z] [supervisor] auth: scheduling proactive refresh in 5763s
+[2026-05-29T01:12:24.588Z] [supervisor] auth: scheduling proactive refresh in 5763s
+[2026-05-29T01:12:24.590Z] [supervisor] workers=0
+[2026-05-29T01:12:24.579Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=3002154 origin=transient
+[2026-05-29T01:12:24.617Z] [supervisor] another daemon is already running (pid=3002215, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-29T01:12:24.655Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T01:12:24.659Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T01:12:24.702Z] [bg] bg spare spawned host pid=3002284
+[2026-05-29T01:35:24.601Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.154) — self-restarting for upgrade
+[2026-05-29T01:35:24.604Z] [supervisor] shutting down
+[2026-05-29T01:35:25.060Z] [supervisor] ─── daemon start ─── version=2.1.154 pid=3007631 origin=transient
+[2026-05-29T01:35:25.108Z] [supervisor] auth: scheduling proactive refresh in 4383s
+[2026-05-29T01:35:25.117Z] [supervisor] auth: scheduling proactive refresh in 4383s
+[2026-05-29T01:35:25.122Z] [supervisor] workers=0
+[2026-05-29T01:35:25.167Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T01:35:25.170Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T01:35:25.247Z] [bg] bg spare spawned host pid=3007751
+[2026-05-29T01:40:25.128Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.154 → /home/cs29824/.local/share/claude/versions/2.1.156) — self-restarting for upgrade
+[2026-05-29T01:40:25.129Z] [supervisor] shutting down
+[2026-05-29T01:40:25.522Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=3008757 origin=transient
+[2026-05-29T01:40:25.570Z] [supervisor] ─── daemon start ─── version=2.1.156 pid=3008754 origin=transient
+[2026-05-29T01:40:25.579Z] [supervisor] another daemon is already running (pid=3008757, version=2.1.156, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-29T01:40:25.579Z] [supervisor] auth: scheduling proactive refresh in 4082s
+[2026-05-29T01:40:25.582Z] [supervisor] auth: scheduling proactive refresh in 4082s
+[2026-05-29T01:40:25.585Z] [supervisor] workers=0
+[2026-05-29T01:40:25.619Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-29T01:40:25.622Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T01:40:25.659Z] [bg] bg spare spawned host pid=3008826
+[2026-05-29T02:48:27.626Z] [supervisor] auth: proactive refresh starting
+[2026-05-29T02:48:27.865Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-29T02:48:27.865Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-29T03:56:25.744Z] [bg] bg settled 6c959b90 (done)
+[2026-05-29T10:44:27.849Z] [supervisor] auth: proactive refresh starting
+[2026-05-29T10:44:28.047Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-29T10:44:28.047Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-29T18:40:28.035Z] [supervisor] auth: proactive refresh starting
+[2026-05-29T18:40:28.472Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-29T18:40:28.472Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-29T20:30:26.048Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.156 → /home/cs29824/.local/share/claude/versions/2.1.157) — self-restarting for upgrade
+[2026-05-29T20:30:26.054Z] [supervisor] shutting down
+[2026-05-29T20:30:26.559Z] [supervisor] ─── daemon start ─── version=2.1.157 pid=3351788 origin=transient
+[2026-05-29T20:30:26.559Z] [supervisor] ─── daemon start ─── version=2.1.157 pid=3351778 origin=transient
+[2026-05-29T20:30:26.602Z] [supervisor] auth: scheduling proactive refresh in 21962s
+[2026-05-29T20:30:26.605Z] [supervisor] another daemon won the lock race (pid=3351788) — exiting
+[2026-05-29T20:30:26.617Z] [supervisor] auth: scheduling proactive refresh in 21962s
+[2026-05-29T20:30:26.620Z] [supervisor] workers=0
+[2026-05-29T20:30:26.663Z] [bg] bg adopt: adopted=3 respawned=0 dead=0
+[2026-05-29T20:30:26.668Z] [bg] bg orphan-spare reap: 1
+[2026-05-29T20:30:26.755Z] [bg] bg spare spawned host pid=3351843
+[2026-05-29T21:23:22.490Z] [bg] bg claimed-spare c82d751b (slash)
+[2026-05-29T21:23:22.525Z] [bg] bg spare spawned host pid=3376249
+[2026-05-29T21:23:26.452Z] [bg] bg claimed-spare 36b5929b (spare)
+[2026-05-29T21:23:26.459Z] [bg] bg spare spawned host pid=3376515
+[2026-05-29T21:25:29.954Z] [bg] bg claimed-spare 93ffc577 (spare)
+[2026-05-29T21:25:29.963Z] [bg] bg spare spawned host pid=3377342
+[2026-05-29T21:53:26.108Z] [bg] bg claimed-spare e59dbc38 (fleet)
+[2026-05-29T21:53:26.129Z] [bg] bg spare spawned host pid=3395641
+[2026-05-29T22:26:26.865Z] [bg] bg settled 93ffc577 (done)
+[2026-05-29T22:32:26.901Z] [bg] bg settled 36b5929b (done)
+[2026-05-29T23:02:26.957Z] [bg] bg settled 37e02c60 (done)
+[2026-05-30T02:36:28.462Z] [supervisor] auth: proactive refresh starting
+[2026-05-30T02:36:28.677Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-30T02:36:28.677Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-30T02:42:26.809Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.157 → /home/cs29824/.local/share/claude/versions/2.1.158) — self-restarting for upgrade
+[2026-05-30T02:42:26.811Z] [supervisor] shutting down
+[2026-05-30T02:42:27.313Z] [supervisor] ─── daemon start ─── version=2.1.158 pid=3496743 origin=transient
+[2026-05-30T02:42:27.385Z] [supervisor] ─── daemon start ─── version=2.1.158 pid=3496768 origin=transient
+[2026-05-30T02:42:27.396Z] [supervisor] auth: scheduling proactive refresh in 28201s
+[2026-05-30T02:42:27.393Z] [supervisor] another daemon is already running (pid=3496743, version=2.1.158, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-30T02:42:27.408Z] [supervisor] auth: scheduling proactive refresh in 28201s
+[2026-05-30T02:42:27.439Z] [supervisor] workers=0
+[2026-05-30T02:42:27.483Z] [bg] bg adopt: adopted=4 respawned=0 dead=0
+[2026-05-30T02:42:27.488Z] [bg] bg orphan-spare reap: 1
+[2026-05-30T02:42:27.584Z] [bg] bg spare spawned host pid=3496830
+[2026-05-30T05:47:27.735Z] [bg] bg settled 062302e7 (done)
+[2026-05-30T06:33:27.716Z] [bg] bg settled c82d751b (done)
+[2026-05-30T06:46:27.719Z] [bg] bg settled e59dbc38 (done)
+[2026-05-30T10:32:28.665Z] [supervisor] auth: proactive refresh starting
+[2026-05-30T10:32:28.879Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-30T10:32:28.880Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-30T18:28:28.869Z] [supervisor] auth: proactive refresh starting
+[2026-05-30T18:28:29.091Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-30T18:28:29.091Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-31T02:24:29.083Z] [supervisor] auth: proactive refresh starting
+[2026-05-31T02:24:29.289Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-31T02:24:29.289Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-31T10:20:29.281Z] [supervisor] auth: proactive refresh starting
+[2026-05-31T10:20:29.508Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-31T10:20:29.508Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-31T18:16:29.498Z] [supervisor] auth: proactive refresh starting
+[2026-05-31T18:16:29.716Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-05-31T18:16:29.716Z] [supervisor] auth: proactive refresh succeeded
+[2026-05-31T19:43:28.714Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.158 → /home/cs29824/.local/share/claude/versions/2.1.159) — self-restarting for upgrade
+[2026-05-31T19:43:28.722Z] [supervisor] shutting down
+[2026-05-31T19:43:29.255Z] [supervisor] ─── daemon start ─── version=2.1.159 pid=4003120 origin=transient
+[2026-05-31T19:43:29.308Z] [supervisor] auth: scheduling proactive refresh in 23340s
+[2026-05-31T19:43:29.313Z] [supervisor] auth: scheduling proactive refresh in 23340s
+[2026-05-31T19:43:29.318Z] [supervisor] workers=0
+[2026-05-31T19:43:29.354Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-05-31T19:43:29.350Z] [supervisor] ─── daemon start ─── version=2.1.159 pid=4003137 origin=transient
+[2026-05-31T19:43:29.356Z] [supervisor] another daemon is already running (pid=4003120, version=2.1.159, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-05-31T19:43:29.357Z] [bg] bg orphan-spare reap: 1
+[2026-05-31T19:43:29.415Z] [bg] bg spare spawned host pid=4003172
+[2026-05-31T21:03:00.243Z] [bg] bg claimed-spare e59dbc38 (fleet)
+[2026-05-31T21:03:00.258Z] [bg] bg spare spawned host pid=4019348
+[2026-05-31T21:30:02.143Z] [bg] bg claimed-spare 1b75392c (fleet)
+[2026-05-31T21:30:02.157Z] [bg] bg spare spawned host pid=4025229
+[2026-05-31T22:03:29.615Z] [bg] bg settled 7e6bc5a7 (done)
+[2026-06-01T02:12:29.705Z] [supervisor] auth: proactive refresh starting
+[2026-06-01T02:12:29.932Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-01T02:12:29.932Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-01T05:51:02.636Z] [bg] bg claimed-spare 7e6bc5a7 (fleet)
+[2026-06-01T05:51:02.660Z] [bg] bg spare spawned host pid=4167848
+[2026-06-01T08:06:29.990Z] [bg] bg settled e59dbc38 (done)
+[2026-06-01T10:08:29.916Z] [supervisor] auth: proactive refresh starting
+[2026-06-01T10:08:30.120Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-01T10:08:30.120Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-01T13:51:30.097Z] [bg] bg settled 7e6bc5a7 (done)
+[2026-06-01T18:04:30.111Z] [supervisor] auth: proactive refresh starting
+[2026-06-01T18:04:30.387Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-01T18:04:30.387Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-02T02:00:30.374Z] [supervisor] auth: proactive refresh starting
+[2026-06-02T02:00:30.563Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-02T02:00:30.563Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-02T02:10:30.500Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.159 → /home/cs29824/.local/share/claude/versions/2.1.160) — self-restarting for upgrade
+[2026-06-02T02:10:30.502Z] [supervisor] shutting down
+[2026-06-02T02:10:30.992Z] [supervisor] ─── daemon start ─── version=2.1.160 pid=258153 origin=transient
+[2026-06-02T02:10:31.029Z] [supervisor] auth: scheduling proactive refresh in 27960s
+[2026-06-02T02:10:31.031Z] [supervisor] ─── daemon start ─── version=2.1.160 pid=258191 origin=transient
+[2026-06-02T02:10:31.035Z] [supervisor] another daemon is already running (pid=258153, version=2.1.160, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-06-02T02:10:31.037Z] [supervisor] auth: scheduling proactive refresh in 27960s
+[2026-06-02T02:10:31.040Z] [supervisor] workers=0
+[2026-06-02T02:10:31.086Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-06-02T02:10:31.090Z] [bg] bg orphan-spare reap: 1
+[2026-06-02T02:10:31.137Z] [bg] bg spare spawned host pid=258221
+[2026-06-02T09:56:30.557Z] [supervisor] auth: proactive refresh starting
+[2026-06-02T09:56:30.813Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-02T09:56:30.813Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-02T17:52:30.801Z] [supervisor] auth: proactive refresh starting
+[2026-06-02T17:52:31.081Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-02T17:52:31.082Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-02T22:05:31.377Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.160 → /home/cs29824/.local/share/claude/versions/2.1.161) — self-restarting for upgrade
+[2026-06-02T22:05:31.399Z] [supervisor] shutting down
+[2026-06-02T22:05:32.023Z] [supervisor] ─── daemon start ─── version=2.1.161 pid=553440 origin=transient
+[2026-06-02T22:05:32.056Z] [supervisor] ─── daemon start ─── version=2.1.161 pid=553424 origin=transient
+[2026-06-02T22:05:32.080Z] [supervisor] auth: scheduling proactive refresh in 13379s
+[2026-06-02T22:05:32.086Z] [supervisor] auth: scheduling proactive refresh in 13379s
+[2026-06-02T22:05:32.091Z] [supervisor] workers=0
+[2026-06-02T22:05:32.106Z] [supervisor] another daemon is already running (pid=553440, version=2.1.161, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-06-02T22:05:32.138Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-06-02T22:05:32.144Z] [bg] bg orphan-spare reap: 1
+[2026-06-02T22:05:32.187Z] [bg] bg spare spawned host pid=553482
+[2026-06-02T23:15:32.290Z] [bg] bg settled 1b75392c (done)
+[2026-06-02T23:15:37.295Z] [supervisor] idle 5s with no clients — exiting
+[2026-06-02T23:15:37.296Z] [supervisor] shutting down
+[2026-06-11T22:50:45.443Z] [supervisor] ─── daemon start ─── version=2.1.162 pid=862378 origin=transient
+[2026-06-11T22:50:45.454Z] [supervisor] auth: scheduling proactive refresh in 5535s
+[2026-06-11T22:50:45.481Z] [supervisor] auth: scheduling proactive refresh in 5534s
+[2026-06-11T22:50:45.483Z] [supervisor] workers=0
+[2026-06-11T22:50:45.585Z] [bg] bg spare spawned host pid=862395
+[2026-06-11T22:50:50.599Z] [bg] bg claimed-spare 60459f8d (slash)
+[2026-06-11T22:50:50.605Z] [bg] bg spare spawned host pid=862484
+[2026-06-11T22:50:55.467Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.162 → /home/cs29824/.local/share/claude/versions/2.1.173) — self-restarting for upgrade
+[2026-06-11T22:50:55.468Z] [supervisor] shutting down
+[2026-06-11T22:50:55.892Z] [supervisor] ─── daemon start ─── version=2.1.173 pid=862664 origin=transient
+[2026-06-11T22:50:55.930Z] [supervisor] auth: scheduling proactive refresh in 5524s
+[2026-06-11T22:50:55.932Z] [supervisor] auth: scheduling proactive refresh in 5524s
+[2026-06-11T22:50:55.934Z] [supervisor] workers=0
+[2026-06-11T22:50:55.960Z] [bg] bg adopt: adopted=1 respawned=0 dead=0
+[2026-06-11T22:50:55.963Z] [bg] bg orphan-spare reap: 1
+[2026-06-11T22:50:56.007Z] [bg] bg spare spawned host pid=862683
+[2026-06-11T22:50:56.029Z] [bg] bg claimed-spare b37ac9be (spare)
+[2026-06-11T22:50:56.036Z] [bg] bg spare spawned host pid=862693
+[2026-06-11T22:53:08.985Z] [bg] bg settled b37ac9be (killed)
+[2026-06-11T22:53:09.008Z] [bg] bg claimed-spare b37ac9be (fleet)
+[2026-06-11T22:53:09.017Z] [bg] bg spare spawned host pid=862938
+[2026-06-11T22:53:09.050Z] [bg] bg claimed-spare 38b1664c (spare)
+[2026-06-11T22:53:09.054Z] [bg] bg spare spawned host pid=862957
+[2026-06-11T23:53:56.130Z] [bg] bg settled 38b1664c (done)
+[2026-06-12T00:22:59.966Z] [supervisor] auth: proactive refresh starting
+[2026-06-12T00:22:59.970Z] [supervisor] auth: scheduling proactive refresh in 28503s
+[2026-06-12T00:22:59.970Z] [supervisor] auth: token still valid (cross-process refresh or not yet due)
+[2026-06-12T00:39:30.526Z] [bg] bg claimed-spare 38b1664c (fleet)
+[2026-06-12T00:39:30.534Z] [bg] bg spare spawned host pid=910169
+[2026-06-12T00:39:30.583Z] [bg] bg claimed-spare 05ed13ec (spare)
+[2026-06-12T00:39:30.596Z] [bg] bg spare spawned host pid=910188
+[2026-06-12T00:42:34.607Z] [bg] bg settled 05ed13ec (killed)
+[2026-06-12T00:42:34.625Z] [bg] bg claimed-spare 05ed13ec (fleet)
+[2026-06-12T00:42:34.635Z] [bg] bg spare spawned host pid=912580
+[2026-06-12T00:42:39.713Z] [bg] bg claimed-spare 83f1fe6a (spare)
+[2026-06-12T00:42:39.725Z] [bg] bg spare spawned host pid=912785
+[2026-06-12T01:08:40.049Z] [bg] bg settled 83f1fe6a (killed)
+[2026-06-12T01:08:40.139Z] [bg] bg claimed-spare 83f1fe6a (fleet)
+[2026-06-12T01:08:40.146Z] [bg] bg spare spawned host pid=925779
+[2026-06-12T01:08:40.189Z] [bg] bg claimed-spare a65f351c (spare)
+[2026-06-12T01:08:40.201Z] [bg] bg spare spawned host pid=925790
+[2026-06-12T01:09:38.069Z] [bg] bg settled a65f351c (killed)
+[2026-06-12T01:09:38.083Z] [bg] bg claimed-spare a65f351c (fleet)
+[2026-06-12T01:09:38.098Z] [bg] bg spare spawned host pid=926431
+[2026-06-12T01:09:38.128Z] [bg] bg claimed-spare dfcbd289 (spare)
+[2026-06-12T01:09:38.135Z] [bg] bg spare spawned host pid=926443
+[2026-06-12T01:24:56.101Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.173 → /home/cs29824/.local/share/claude/versions/2.1.174) — self-restarting for upgrade
+[2026-06-12T01:24:56.102Z] [supervisor] shutting down
+[2026-06-12T01:24:56.558Z] [supervisor] ─── daemon start ─── version=2.1.174 pid=937141 origin=transient
+[2026-06-12T01:24:56.596Z] [supervisor] auth: scheduling proactive refresh in 24786s
+[2026-06-12T01:24:56.599Z] [supervisor] auth: scheduling proactive refresh in 24786s
+[2026-06-12T01:24:56.602Z] [supervisor] workers=0
+[2026-06-12T01:24:56.632Z] [bg] bg adopt: adopted=7 respawned=0 dead=0
+[2026-06-12T01:24:56.651Z] [bg] bg orphan-spare reap: 1
+[2026-06-12T01:24:56.741Z] [bg] bg spare spawned host pid=937209
+[2026-06-12T02:09:56.745Z] [bg] bg settled dfcbd289 (done)
+[2026-06-12T03:20:06.903Z] [bg] bg claimed-spare 062302e7 (fleet)
+[2026-06-12T03:20:06.923Z] [bg] bg spare spawned host pid=956533
+[2026-06-12T03:20:21.454Z] [bg] bg settled 062302e7 (killed)
+[2026-06-12T03:20:59.926Z] [bg] bg claimed-spare 7e6bc5a7 (fleet)
+[2026-06-12T03:20:59.932Z] [bg] bg spare spawned host pid=957001
+[2026-06-12T04:26:56.718Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.174 → /home/cs29824/.local/share/claude/versions/2.1.175) — self-restarting for upgrade
+[2026-06-12T04:26:56.721Z] [supervisor] shutting down
+[2026-06-12T04:26:57.118Z] [supervisor] ─── daemon start ─── version=2.1.175 pid=976370 origin=transient
+[2026-06-12T04:26:57.159Z] [supervisor] auth: scheduling proactive refresh in 24440s
+[2026-06-12T04:26:57.161Z] [supervisor] auth: scheduling proactive refresh in 24440s
+[2026-06-12T04:26:57.164Z] [supervisor] workers=0
+[2026-06-12T04:26:57.193Z] [bg] bg adopt: adopted=7 respawned=0 dead=0
+[2026-06-12T04:26:57.196Z] [bg] bg orphan-spare reap: 1
+[2026-06-12T04:26:57.273Z] [bg] bg spare spawned host pid=976439
+[2026-06-12T04:40:27.306Z] [bg] bg claimed-spare dfcbd289 (fleet)
+[2026-06-12T04:40:27.325Z] [bg] bg spare spawned host pid=994084
+[2026-06-12T04:40:32.395Z] [bg] bg claimed-spare 6014d95b (spare)
+[2026-06-12T04:40:32.410Z] [bg] bg spare spawned host pid=994393
+[2026-06-12T05:10:22.161Z] [bg] bg claimed-spare e59dbc38 (fleet)
+[2026-06-12T05:10:22.169Z] [bg] bg spare spawned host pid=1013750
+[2026-06-12T05:10:36.294Z] [bg] bg settled e59dbc38 (killed)
+[2026-06-12T05:10:38.765Z] [bg] bg settled 6014d95b (killed)
+[2026-06-12T05:10:42.320Z] [bg] bg claimed-spare 93acd744 (spare)
+[2026-06-12T05:10:42.333Z] [bg] bg spare spawned host pid=1013999
+[2026-06-12T05:29:27.492Z] [bg] bg claimed-spare 9d22a492 (spare)
+[2026-06-12T05:29:27.505Z] [bg] bg spare spawned host pid=1020396
+[2026-06-12T06:29:57.485Z] [bg] bg settled 9d22a492 (done)
+[2026-06-12T09:26:57.657Z] [bg] bg settled 38b1664c (done)
+[2026-06-12T09:27:57.646Z] [bg] bg settled a65f351c (done)
+[2026-06-12T11:14:17.529Z] [supervisor] auth: proactive refresh starting
+[2026-06-12T11:14:17.696Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-12T11:14:17.696Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-12T11:21:57.597Z] [bg] bg settled 7e6bc5a7 (done)
+[2026-06-12T11:21:57.601Z] [bg] bg settled 60459f8d (done)
+[2026-06-12T12:29:57.601Z] [bg] bg settled 05ed13ec (done)
+[2026-06-12T12:58:57.620Z] [bg] bg settled dfcbd289 (done)
+[2026-06-12T13:12:57.611Z] [bg] bg settled b37ac9be (done)
+[2026-06-12T19:10:17.687Z] [supervisor] auth: proactive refresh starting
+[2026-06-12T19:10:17.865Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-12T19:10:17.865Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-12T22:07:58.065Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.175 → /home/cs29824/.local/share/claude/versions/2.1.176) — self-restarting for upgrade
+[2026-06-12T22:07:58.066Z] [supervisor] shutting down
+[2026-06-12T22:07:58.489Z] [supervisor] ─── daemon start ─── version=2.1.176 pid=1130240 origin=transient
+[2026-06-12T22:07:58.529Z] [supervisor] auth: scheduling proactive refresh in 17899s
+[2026-06-12T22:07:58.531Z] [supervisor] auth: scheduling proactive refresh in 17899s
+[2026-06-12T22:07:58.533Z] [supervisor] workers=0
+[2026-06-12T22:07:58.571Z] [bg] bg adopt: adopted=2 respawned=0 dead=0
+[2026-06-12T22:07:58.573Z] [bg] bg orphan-spare reap: 1
+[2026-06-12T22:07:58.644Z] [bg] bg spare spawned host pid=1130260
+[2026-06-13T01:38:58.597Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.176 → /home/cs29824/.local/share/claude/versions/2.1.177) — self-restarting for upgrade
+[2026-06-13T01:38:58.600Z] [supervisor] shutting down
+[2026-06-13T01:38:59.024Z] [supervisor] ─── daemon start ─── version=2.1.177 pid=1151056 origin=transient
+[2026-06-13T01:38:59.065Z] [supervisor] auth: scheduling proactive refresh in 5239s
+[2026-06-13T01:38:59.063Z] [supervisor] ─── daemon start ─── version=2.1.177 pid=1151059 origin=transient
+[2026-06-13T01:38:59.067Z] [supervisor] auth: scheduling proactive refresh in 5239s
+[2026-06-13T01:38:59.068Z] [supervisor] another daemon is already running (pid=1151056, version=2.1.177, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-06-13T01:38:59.069Z] [supervisor] workers=0
+[2026-06-13T01:38:59.111Z] [bg] bg adopt: adopted=2 respawned=0 dead=0
+[2026-06-13T01:38:59.114Z] [bg] bg orphan-spare reap: 1
+[2026-06-13T01:38:59.160Z] [bg] bg spare spawned host pid=1151122
+[2026-06-13T03:06:17.861Z] [supervisor] auth: proactive refresh starting
+[2026-06-13T03:06:18.027Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-13T03:06:18.027Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-13T11:02:18.022Z] [supervisor] auth: proactive refresh starting
+[2026-06-13T11:02:18.203Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-13T11:02:18.204Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-13T18:58:18.194Z] [supervisor] auth: proactive refresh starting
+[2026-06-13T18:58:18.360Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-13T18:58:18.360Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-14T02:54:18.359Z] [supervisor] auth: proactive refresh starting
+[2026-06-14T02:54:18.539Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-14T02:54:18.539Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-14T10:50:18.537Z] [supervisor] auth: proactive refresh starting
+[2026-06-14T10:50:18.713Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-14T10:50:18.713Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-14T18:46:18.708Z] [supervisor] auth: proactive refresh starting
+[2026-06-14T18:46:18.899Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-14T18:46:18.899Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-15T02:42:18.892Z] [supervisor] auth: proactive refresh starting
+[2026-06-15T02:42:19.066Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-15T02:42:19.066Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-15T10:38:19.061Z] [supervisor] auth: proactive refresh starting
+[2026-06-15T10:38:19.260Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-15T10:38:19.260Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-15T18:34:19.253Z] [supervisor] auth: proactive refresh starting
+[2026-06-15T18:34:19.430Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-15T18:34:19.430Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-15T21:41:00.961Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.177 → /home/cs29824/.local/share/claude/versions/2.1.178) — self-restarting for upgrade
+[2026-06-15T21:41:00.963Z] [supervisor] shutting down
+[2026-06-15T21:41:01.414Z] [supervisor] ─── daemon start ─── version=2.1.178 pid=1530452 origin=transient
+[2026-06-15T21:41:01.455Z] [supervisor] auth: scheduling proactive refresh in 17358s
+[2026-06-15T21:41:01.457Z] [supervisor] auth: scheduling proactive refresh in 17358s
+[2026-06-15T21:41:01.459Z] [supervisor] workers=0
+[2026-06-15T21:41:01.474Z] [supervisor] ─── daemon start ─── version=2.1.178 pid=1530455 origin=transient
+[2026-06-15T21:41:01.479Z] [supervisor] another daemon is already running (pid=1530452, version=2.1.178, origin=transient; an on-demand daemon never displaces a running one). Run `claude daemon stop` to stop it, then retry.
+[2026-06-15T21:41:01.488Z] [bg] bg adopt: adopted=2 respawned=0 dead=0
+[2026-06-15T21:41:01.491Z] [bg] bg orphan-spare reap: 1
+[2026-06-15T21:41:01.535Z] [bg] bg spare spawned host pid=1530525
+[2026-06-16T02:30:19.428Z] [supervisor] auth: proactive refresh starting
+[2026-06-16T02:30:19.616Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-16T02:30:19.616Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-16T10:26:19.609Z] [supervisor] auth: proactive refresh starting
+[2026-06-16T10:26:19.798Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-16T10:26:19.798Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-16T18:22:19.794Z] [supervisor] auth: proactive refresh starting
+[2026-06-16T18:22:19.970Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-16T18:22:19.970Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-16T20:26:01.829Z] [supervisor] binary at /home/cs29824/.local/bin/claude changed (/home/cs29824/.local/share/claude/versions/2.1.178 → /home/cs29824/.local/share/claude/versions/2.1.179) — self-restarting for upgrade
+[2026-06-16T20:26:01.831Z] [supervisor] shutting down (cause=upgrade, uptime=81900s, leases=0, live_workers=2)
+[2026-06-16T20:26:02.284Z] [supervisor] ─── daemon start ─── version=2.1.179 pid=1639015 origin=transient
+[2026-06-16T20:26:02.322Z] [supervisor] auth: scheduling proactive refresh in 21138s
+[2026-06-16T20:26:02.324Z] [supervisor] auth: scheduling proactive refresh in 21138s
+[2026-06-16T20:26:02.326Z] [supervisor] workers=0
+[2026-06-16T20:26:02.354Z] [bg] bg adopt: adopted=2 respawned=0 dead=0
+[2026-06-16T20:26:02.357Z] [bg] bg orphan-spare reap: 1
+[2026-06-16T20:26:02.396Z] [bg] bg spare spawned host pid=1639048
+[2026-06-17T02:18:19.965Z] [supervisor] auth: proactive refresh starting
+[2026-06-17T02:18:20.144Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-17T02:18:20.144Z] [supervisor] auth: proactive refresh succeeded
+[2026-06-17T10:14:20.135Z] [supervisor] auth: proactive refresh starting
+[2026-06-17T10:14:20.410Z] [supervisor] auth: scheduling proactive refresh in 28560s
+[2026-06-17T10:14:20.410Z] [supervisor] auth: proactive refresh succeeded

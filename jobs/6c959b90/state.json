@@ -1,0 +1,36 @@
+{
+  "state": "done",
+  "detail": "Project overview lives in `FINDINGS.md` (11 findings, current); figures in `results/figures/` (esp. fig7) and `results/cgs/findings_summary.png`; paper.pdf has pre-pivot framing. Sent you the two key figures; left-off point is the deferred Phase E paper rewrite.",
+  "tempo": "idle",
+  "inFlight": {
+    "tasks": 0,
+    "queued": 0,
+    "kinds": []
+  },
+  "output": {
+    "result": "Project overview lives in `FINDINGS.md` (11 findings, current); figures in `results/figures/` (esp. fig7) and `results/cgs/findings_summary.png`; paper.pdf has pre-pivot framing. Sent you the two key figures; left-off point is the deferred Phase E paper rewrite."
+  },
+  "children": null,
+  "linkScanOffset": 112372,
+  "linkScanPath": "/home/cs29824/.claude/projects/-home-cs29824-matthew-code-detection-confound/6c959b90-d748-4d58-bc35-6ffe5f2cbc9d.jsonl",
+  "template": "claude",
+  "respawnFlags": [
+    "--agent",
+    "claude"
+  ],
+  "intent": "Where can I read about the project as a whole, with figures? I'm returning to this project after a few weeks and would like to know what we've found so far",
+  "sessionId": "6c959b90-d748-4d58-bc35-6ffe5f2cbc9d",
+  "resumeSessionId": "6c959b90-d748-4d58-bc35-6ffe5f2cbc9d",
+  "daemonShort": "6c959b90",
+  "cliVersion": "2.1.154",
+  "cwd": "/home/cs29824/matthew/code-detection-confound",
+  "createdAt": "2026-05-28T19:54:59.086Z",
+  "updatedAt": "2026-05-28T19:55:38.695Z",
+  "firstTerminalAt": "2026-05-28T19:55:37.728Z",
+  "originCwd": "/home/cs29824/matthew/code-detection-confound",
+  "bridgeSessionId": "cse_014QpksuLv1YwUdcpYy64WTb",
+  "bridgeOutboundOnly": false,
+  "backend": "daemon",
+  "name": "project overview retrieval",
+  "nameSource": "auto"
+}

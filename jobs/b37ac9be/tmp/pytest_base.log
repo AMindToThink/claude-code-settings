@@ -1,0 +1,27 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 47%]
+[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 94%]
+[0m[32m.[0m[32m.[0m[32m.[0m[31mF[0m
+=================================== FAILURES ===================================
+[31m[1m______________________________ test_inputs_exist _______________________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_inputs_exist[39;49;00m():[90m[39;49;00m
+    [90m    [39;49;00m[33m"""Every \\input{...} target referenced by the paper exists on disk."""[39;49;00m[90m[39;49;00m
+        text = paper_text()[90m[39;49;00m
+        paper_dir = PAPER.parent[90m[39;49;00m
+        missing = [][90m[39;49;00m
+        [94mfor[39;49;00m rel [95min[39;49;00m re.findall([33mr[39;49;00m[33m"[39;49;00m[33m\\[39;49;00m[33minput[39;49;00m[33m\[39;49;00m[33m{[39;49;00m[33m([^}]+)[39;49;00m[33m\[39;49;00m[33m}[39;49;00m[33m"[39;49;00m, text):[90m[39;49;00m
+            [90m# resolve relative to the paper directory; \tabdir expands to a path[39;49;00m[90m[39;49;00m
+            rel = rel.replace([33m"[39;49;00m[33m\\[39;49;00m[33mtabdir[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33m../results/tables[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+            [94mif[39;49;00m [95mnot[39;49;00m rel.endswith([33m"[39;49;00m[33m.tex[39;49;00m[33m"[39;49;00m):[90m[39;49;00m
+                rel += [33m"[39;49;00m[33m.tex[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+            [94mif[39;49;00m [95mnot[39;49;00m (paper_dir / rel).resolve().is_file():[90m[39;49;00m
+                missing.append(rel)[90m[39;49;00m
+>       [94massert[39;49;00m [95mnot[39;49;00m missing, [33mf[39;49;00m[33m"[39;49;00m[33m\\[39;49;00m[33minput targets missing: [39;49;00m[33m{[39;49;00mmissing[33m}[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+[1m[31mE       AssertionError: \input targets missing: ['../results/tables/tab_grid_certificate.tex'][0m
+[1m[31mE       assert not ['../results/tables/tab_grid_certificate.tex'][0m
+
+[1m[31mtests/test_paper_macros.py[0m:157: AssertionError
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m tests/test_paper_macros.py::[1mtest_inputs_exist[0m - AssertionError: \input targets missing: ['../results/tables/tab_grid_certif...
+[31m!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!![0m
+[31m[31m[1m1 failed[0m, [32m144 passed[0m, [33m4 skipped[0m[31m in 19.01s[0m[0m

@@ -1,0 +1,41 @@
+{
+  "state": "blocked",
+  "detail": "Want me to do the report-macro cleanup (#2), or adjust the git email (#1)?",
+  "tempo": "blocked",
+  "inFlight": {
+    "tasks": 0,
+    "queued": 0,
+    "kinds": []
+  },
+  "needs": "Want me to do the report-macro cleanup (#2), or adjust the git email (#1)?",
+  "suggestedReply": "Do the report-macro cleanup (#2)",
+  "output": null,
+  "children": null,
+  "linkScanOffset": 3785449,
+  "linkScanPath": "/home/cs29824/.claude/projects/-home-cs29824-matthew-decoding-decoding/7e6bc5a7-60ba-41af-9e87-d416b9413972.jsonl",
+  "template": "bg",
+  "respawnFlags": [
+    "--effort",
+    "xhigh",
+    "--permission-mode",
+    "auto",
+    "--model",
+    "Opus"
+  ],
+  "bgIsolation": "none",
+  "providerEnv": {},
+  "intent": "Compile the scattered reports into a paper. Import from those reports, avoid rewriting when possible.",
+  "name": "Review project documentation and test results",
+  "nameSource": "auto",
+  "sessionId": "7e6bc5a7-60ba-41af-9e87-d416b9413972",
+  "resumeSessionId": "7e6bc5a7-60ba-41af-9e87-d416b9413972",
+  "daemonShort": "7e6bc5a7",
+  "cliVersion": "2.1.154",
+  "cwd": "/home/cs29824/matthew/decoding-decoding",
+  "createdAt": "2026-05-28T21:33:48.414Z",
+  "updatedAt": "2026-06-12T03:21:03.260Z",
+  "firstTerminalAt": null,
+  "bridgeSessionId": "cse_016jVDsv3EeCF5D8vYpNiwaM",
+  "bridgeOutboundOnly": false,
+  "backend": "daemon"
+}

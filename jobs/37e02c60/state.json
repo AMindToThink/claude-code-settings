@@ -1,0 +1,32 @@
+{
+  "state": "failed",
+  "detail": "API Error: Stream idle timeout - partial response received",
+  "tempo": "idle",
+  "inFlight": {
+    "tasks": 0,
+    "queued": 0,
+    "kinds": []
+  },
+  "output": null,
+  "children": null,
+  "linkScanOffset": 548295,
+  "linkScanPath": "/home/cs29824/.claude/projects/-home-cs29824-matthew-decoding-decoding/37e02c60-aad8-4af5-9372-785e090b150e.jsonl",
+  "template": "claude",
+  "respawnFlags": [
+    "--agent",
+    "claude"
+  ],
+  "intent": "What open transformer model from 2025 or later would literally run the fastest generating strings of length 200 at huge scale with beam search and a huge number of beams on this computer? I realized that generating beams, then weighting them using temperature is our *correct ground truth* for the thing we are trying to target with our adjustment to the temperature during autoregressive sampling.",
+  "name": "model inference performance analysis",
+  "nameSource": "auto",
+  "sessionId": "37e02c60-aad8-4af5-9372-785e090b150e",
+  "resumeSessionId": "37e02c60-aad8-4af5-9372-785e090b150e",
+  "daemonShort": "37e02c60",
+  "cliVersion": "2.1.154",
+  "cwd": "/home/cs29824/matthew/decoding-decoding",
+  "createdAt": "2026-05-28T21:36:31.045Z",
+  "updatedAt": "2026-05-29T22:01:59.228Z",
+  "firstTerminalAt": "2026-05-29T22:01:59.228Z",
+  "originCwd": "/home/cs29824/matthew/decoding-decoding",
+  "backend": "daemon"
+}

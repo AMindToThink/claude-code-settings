@@ -1,0 +1,39 @@
+{
+  "state": "blocked",
+  "detail": "let me know what you'd like next — for example: push these commits, change the footnote wording/placement, or move on to a different task.",
+  "tempo": "blocked",
+  "inFlight": {
+    "tasks": 0,
+    "queued": 0,
+    "kinds": []
+  },
+  "needs": "let me know what you'd like next — for example: push these commits, change the footnote wording/placement, or move on to a different task.",
+  "output": null,
+  "children": null,
+  "linkScanOffset": 386698,
+  "linkScanPath": "/home/cs29824/.claude/projects/-home-cs29824-matthew-decoding-decoding/93acd744-42aa-4269-9722-f70c3b8a9f7d.jsonl",
+  "template": "claude",
+  "respawnFlags": [
+    "--agent",
+    "claude",
+    "--model",
+    "Opus"
+  ],
+  "intent": "Add a footnote on page 1 of writeup.tex which goes to the GitHub url of the repo.",
+  "name": "writeup.tex github footnote",
+  "nameSource": "auto",
+  "sessionId": "93acd744-42aa-4269-9722-f70c3b8a9f7d",
+  "resumeSessionId": "93acd744-42aa-4269-9722-f70c3b8a9f7d",
+  "daemonShort": "93acd744",
+  "cliVersion": "2.1.179",
+  "cwd": "/home/cs29824/matthew/decoding-decoding",
+  "worktreePath": "/home/cs29824/matthew/decoding-decoding/.claude/worktrees/add-repo-footnote",
+  "worktreeBranch": "worktree-add-repo-footnote",
+  "originCwd": "/home/cs29824/matthew/decoding-decoding",
+  "bridgeSessionId": "cse_01824Yh8RqY6ckLZg6x2AeZD",
+  "bridgeOutboundOnly": false,
+  "backend": "daemon",
+  "createdAt": "2026-06-12T05:29:27.450Z",
+  "updatedAt": "2026-06-16T20:27:10.563Z",
+  "firstTerminalAt": "2026-06-12T05:34:56.461Z"
+}

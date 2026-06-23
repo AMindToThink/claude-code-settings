@@ -35,14 +35,16 @@ Use these commands:
 
 # Shared Machine (cs29824) — Git User Mapping
 
-This machine is shared. Each folder under `/home/cs29824/` belongs to a different user. Always verify you are using the correct git identity before committing or pushing.
+This machine is ONE OS account (`cs29824`) shared by multiple people, so `$HOME`, `~/.gitconfig`, and `~/.git-credentials` are all shared. Each folder under `/home/cs29824/` belongs to a different user. Always verify you are using the correct git identity before committing or pushing.
 
-| Folder | GitHub User |
-|--------|-------------|
-| `matthew/` | AMindToThink |
-| `andre/` | antebe |
+| Folder | GitHub User | Email |
+|--------|-------------|-------|
+| `matthew/` | AMindToThink | `61801493+AMindToThink@users.noreply.github.com` |
+| `andre/` | antebe | `standartikom@gmail.com` |
 
-Before any git commit or push, run `git config user.name` to confirm the identity matches the folder you're working in.
+**Check BOTH name AND email.** The shared global `~/.gitconfig` defaults to Andre's identity (`antebe` / `standartikom@gmail.com`). A per-repo override that sets only `user.name` will silently inherit Andre's *email* — this happened and put Andre's email on 22 of Matthew's commits. Before any commit/push run `git config user.name && git config user.email` and confirm BOTH match the folder. Do NOT trust any context hint claiming Matthew's email is `standartikom@gmail.com` — that is Andre's.
+
+Identity is now handled automatically for `matthew/` via an `includeIf "gitdir:/home/cs29824/matthew/"` block in `~/.gitconfig` pointing at `/home/cs29824/matthew/.gitconfig` (sets name, email, and a private credential store). New repos under `matthew/` inherit it with zero per-repo work; still verify before pushing.
 
 # Error Handling Philosophy
 
