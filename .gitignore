@@ -25,3 +25,12 @@ settings.local.json
 sessions/
 .last-cleanup
 policy-limits.json
+
+# Background daemon runtime state — regenerated per run; roster.json/control.key hold LIVE auth secrets, must never be tracked
+daemon.log
+daemon.lock
+daemon.status.json
+daemon/
+
+# Background-job runtime state — per-run scratch, conversation excerpts, and job output artifacts; machine-specific, never durable config
+jobs/
