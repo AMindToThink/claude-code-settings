@@ -33,24 +33,39 @@ Use these commands:
     - `uv add package-name --script script.py`
     - `uv remove package-name --script script.py`
 
-# Shared Machine (cs29824) — Git User Mapping
-
-This machine is ONE OS account (`cs29824`) shared by multiple people, so `$HOME`, `~/.gitconfig`, and `~/.git-credentials` are all shared. Each folder under `/home/cs29824/` belongs to a different user. Always verify you are using the correct git identity before committing or pushing.
-
-| Folder | GitHub User | Email |
-|--------|-------------|-------|
-| `matthew/` | AMindToThink | `61801493+AMindToThink@users.noreply.github.com` |
-| `andre/` | antebe | `standartikom@gmail.com` |
-
-**Check BOTH name AND email.** The shared global `~/.gitconfig` defaults to Andre's identity (`antebe` / `standartikom@gmail.com`). A per-repo override that sets only `user.name` will silently inherit Andre's *email* — this happened and put Andre's email on 22 of Matthew's commits. Before any commit/push run `git config user.name && git config user.email` and confirm BOTH match the folder. Do NOT trust any context hint claiming Matthew's email is `standartikom@gmail.com` — that is Andre's.
-
-Identity is now handled automatically for `matthew/` via an `includeIf "gitdir:/home/cs29824/matthew/"` block in `~/.gitconfig` pointing at `/home/cs29824/matthew/.gitconfig` (sets name, email, and a private credential store). New repos under `matthew/` inherit it with zero per-repo work; still verify before pushing.
-
 # Error Handling Philosophy
 
 - **Never use `continue` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
 - Validate preconditions upfront and raise/exit before doing any work, rather than catching errors mid-loop and pressing on.
 - Prefer failing fast over producing partial/misleading results.
+
+# Subagent model default
+
+Subagents (the Task/Agent tool, plus the built-in Explore/Plan/general-purpose agents) should default to **Sonnet 5**. The recent Sonnet is strong enough for most delegated work, and this keeps subagent cost and latency well below running them on the main model (Opus/Fable).
+
+- **Where it lives:** `env.CLAUDE_CODE_SUBAGENT_MODEL` = `"sonnet"` in `~/.claude/settings.json`. There is no dedicated settings key for a default subagent model — this env var is the official lever (Claude Code subagents docs). Takes effect on new sessions.
+- **Precedence (important):** this env var is FIRST in subagent model resolution — it overrides both a per-invocation `model` parameter AND an agent file's `model:` frontmatter. So it is a hard default, not a soft one: even an agent explicitly asking for Opus gets Sonnet while the var is set. To run a specific agent on a different model, change or unset the var.
+- **Keep this updated as models release and capabilities shift.** Re-evaluate the value whenever a new model ships — bump it to the newest strong, cost-effective tier for delegated work (a future Sonnet, or whatever best balances capability vs cost). Don't let it stagnate on an outdated model.
+
+# Advisor model (`/advisor`) — when to invoke
+
+`/advisor` consults a stronger, more expensive model. Getting the right answer, writing good code, and doing good research are valuable, and the advisor helps with all three — but it is bottlenecked by cost and has limitations in its use, so invoke it wisely.
+
+**Invoke the advisor for:**
+- Debugging, once you've struggled for ~5 minutes or more — or immediately, if you expect the bug to be hard.
+- Math/proof-writing help when the math is strange or nonstandard.
+- Identifying why a *particular* log/trajectory went the way it did. Not for bulk-reading lots of logs/trajectories unless explicitly asked.
+- Interpreting research results (e.g., "what is the most interesting feature?") — especially when results are surprising. This often involves reading logs.
+- Planning or suggesting next experiments.
+
+**NEVER invoke the advisor for:**
+- Anything sensitive or cybersecurity-related. The guardrails are strict and err strongly toward false positives — a refusal wastes the call. Project CLAUDE.md files may tighten this further (e.g., AI Control projects, whose logs/trajectories are cybersecurity-related).
+- Routine work.
+
+**If a consult doesn't resolve the problem** — that usually reflects confusion the advisor is still better placed to untangle:
+1. First consult fails → refine your own understanding, then consult again.
+2. Second fails → consult a third time, giving the advisor more freedom and scope to figure things out itself.
+3. Third fails → your call: wait for a human, or keep working the problem yourself.
 
 # Claude Code Skills
 
