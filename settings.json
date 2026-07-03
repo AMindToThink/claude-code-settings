@@ -1,6 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 99999,
+  "env": {
+    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
+  },
   "permissions": {
     "allow": [
       "Bash(terminal-notifier*)",
@@ -107,7 +110,7 @@
       "/tmp"
     ]
   },
-  "model": "Opus",
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "Notification": [
       {
@@ -162,7 +165,7 @@
   },
   "enabledPlugins": {
     "double-shot-latte@superpowers-marketplace": false,
-    "superpowers@superpowers-marketplace": true
+    "superpowers@superpowers-marketplace": false
   },
   "extraKnownMarketplaces": {
     "claude-code-plugins": {
@@ -180,6 +183,7 @@
   },
   "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "editorMode": "vim",
   "remoteControlAtStartup": true,
@@ -188,5 +192,5 @@
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
   },
-  "skipWorkflowUsageWarning": true
+  "advisorModel": "fable"
 }
