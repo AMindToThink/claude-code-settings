@@ -13,11 +13,6 @@ DATA=$(cat)
 
 CWD=$(echo "$DATA" | "$JQ" -r '.cwd // ""')
 MODEL=$(echo "$DATA" | "$JQ" -r '.model.display_name // ""')
-# Present only while vim mode is enabled. The built-in indicator has no NORMAL
-# state -- it only shows "-- INSERT --" / "-- VISUAL --" -- so we render the mode
-# here instead, and settings.json sets hideVimModeIndicator to avoid showing
-# INSERT twice.
-VIM=$(echo "$DATA" | "$JQ" -r '.vim.mode // empty')
 COST=$(echo "$DATA" | "$JQ" -r '.cost.total_cost_usd // 0' | xargs printf "%.3f")
 CTX=$(echo "$DATA" | "$JQ" -r '.context_window.used_percentage // 0' | xargs printf "%.0f")
 ADDED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_added // 0')
@@ -70,20 +65,8 @@ CWD="${CWD/#$HOME/~}"
 # Git branch (from the cwd)
 BRANCH=$(git -C "$(echo "$DATA" | "$JQ" -r '.cwd // "."')" rev-parse --abbrev-ref HEAD 2>/dev/null)
 
-# Each mode gets its own color, since this replaces the built-in indicator:
-# INSERT green, NORMAL blue, VISUAL yellow.
-vim_color() {
-    case "$1" in
-        INSERT) echo '1;32' ;;
-        NORMAL) echo '1;34' ;;
-        VISUAL*) echo '1;33' ;;
-        *) echo '1' ;;
-    esac
-}
-
 # Build the line
 LINE=""
-[ -n "$VIM" ] && LINE="${LINE}\033[$(vim_color "$VIM")m${VIM}\033[0m  "
 [ -n "$MODEL" ] && LINE="${LINE}\033[36m${MODEL}\033[0m"
 [ -n "$CWD" ] && LINE="${LINE}  \033[33m${CWD}\033[0m"
 [ -n "$BRANCH" ] && LINE="${LINE}  \033[35m${BRANCH}\033[0m"
