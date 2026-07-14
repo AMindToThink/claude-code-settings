@@ -13,6 +13,8 @@ DATA=$(cat)
 
 CWD=$(echo "$DATA" | "$JQ" -r '.cwd // ""')
 MODEL=$(echo "$DATA" | "$JQ" -r '.model.display_name // ""')
+# Absent when the current model does not support the effort parameter
+EFFORT=$(echo "$DATA" | "$JQ" -r '.effort.level // empty')
 COST=$(echo "$DATA" | "$JQ" -r '.cost.total_cost_usd // 0' | xargs printf "%.3f")
 CTX=$(echo "$DATA" | "$JQ" -r '.context_window.used_percentage // 0' | xargs printf "%.0f")
 ADDED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_added // 0')
@@ -65,15 +67,22 @@ CWD="${CWD/#$HOME/~}"
 # Git branch (from the cwd)
 BRANCH=$(git -C "$(echo "$DATA" | "$JQ" -r '.cwd // "."')" rev-parse --abbrev-ref HEAD 2>/dev/null)
 
-# Build the line
+# First line: model, effort, where we are, and what this session has spent
 LINE=""
 [ -n "$MODEL" ] && LINE="${LINE}\033[36m${MODEL}\033[0m"
+[ -n "$EFFORT" ] && LINE="${LINE} \033[90m${EFFORT}\033[0m"
 [ -n "$CWD" ] && LINE="${LINE}  \033[33m${CWD}\033[0m"
 [ -n "$BRANCH" ] && LINE="${LINE}  \033[35m${BRANCH}\033[0m"
 LINE="${LINE}  \033[32m\$${COST}\033[0m"
 LINE="${LINE}  \033[32m+${ADDED}\033[0m \033[31m-${REMOVED}\033[0m"
 LINE="${LINE}  \033[90mctx:${CTX}%\033[0m"
-SEG=$(fmt_limit 5h "$RL5_PCT" "$RL5_AT") && [ -n "$SEG" ] && LINE="${LINE}  ${SEG}"
-SEG=$(fmt_limit 7d "$RL7_PCT" "$RL7_AT") && [ -n "$SEG" ] && LINE="${LINE}  ${SEG}"
+
+# Second line: plan usage. Omitted entirely when no window is reported, so we
+# never print a blank row.
+LINE2=""
+SEG=$(fmt_limit 5h "$RL5_PCT" "$RL5_AT") && [ -n "$SEG" ] && LINE2="${SEG}"
+SEG=$(fmt_limit 7d "$RL7_PCT" "$RL7_AT") && [ -n "$SEG" ] && LINE2="${LINE2:+$LINE2  }${SEG}"
 
 echo -e "$LINE"
+[ -n "$LINE2" ] && echo -e "$LINE2"
+exit 0
