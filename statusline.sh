@@ -18,6 +18,47 @@ CTX=$(echo "$DATA" | "$JQ" -r '.context_window.used_percentage // 0' | xargs pri
 ADDED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_added // 0')
 REMOVED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_removed // 0')
 
+# Plan (subscription) rate limits. Only present for Pro/Max, and only after the
+# first API response of a session -- "// empty" leaves these blank otherwise.
+RL5_PCT=$(echo "$DATA" | "$JQ" -r '.rate_limits.five_hour.used_percentage // empty')
+RL5_AT=$(echo "$DATA" | "$JQ" -r '.rate_limits.five_hour.resets_at // empty')
+RL7_PCT=$(echo "$DATA" | "$JQ" -r '.rate_limits.seven_day.used_percentage // empty')
+RL7_AT=$(echo "$DATA" | "$JQ" -r '.rate_limits.seven_day.resets_at // empty')
+NOW=$(date +%s)
+
+# resets_at is Unix epoch seconds -> compact "2h14m" / "3d4h" / "12m"
+fmt_until() {
+    local target="${1%%.*}"
+    case "$target" in
+        ''|*[!0-9]*) return ;;
+    esac
+    local secs=$(( target - NOW ))
+    if [ "$secs" -le 0 ]; then echo "now"; return; fi
+    local d=$(( secs / 86400 )) h=$(( secs % 86400 / 3600 )) m=$(( secs % 3600 / 60 ))
+    if [ "$d" -gt 0 ]; then echo "${d}d${h}h"
+    elif [ "$h" -gt 0 ]; then echo "${h}h${m}m"
+    else echo "${m}m"; fi
+}
+
+pct_color() {
+    local p="${1%%.*}"
+    case "$p" in
+        ''|*[!0-9]*) p=0 ;;
+    esac
+    if [ "$p" -ge 90 ]; then echo 31        # red
+    elif [ "$p" -ge 70 ]; then echo 33      # yellow
+    else echo 90; fi                        # gray
+}
+
+# "5h:24% (1h12m)" -- percentage, and how long until that window refreshes
+fmt_limit() {
+    local label="$1" pct="$2" at="$3"
+    [ -z "$pct" ] && return
+    local until
+    until=$(fmt_until "$at")
+    printf '\033[%sm%s:%.0f%%%s\033[0m' "$(pct_color "$pct")" "$label" "$pct" "${until:+ ($until)}"
+}
+
 # Shorten home directory to ~
 CWD="${CWD/#$HOME/~}"
 
@@ -32,5 +73,7 @@ LINE=""
 LINE="${LINE}  \033[32m\$${COST}\033[0m"
 LINE="${LINE}  \033[32m+${ADDED}\033[0m \033[31m-${REMOVED}\033[0m"
 LINE="${LINE}  \033[90mctx:${CTX}%\033[0m"
+SEG=$(fmt_limit 5h "$RL5_PCT" "$RL5_AT") && [ -n "$SEG" ] && LINE="${LINE}  ${SEG}"
+SEG=$(fmt_limit 7d "$RL7_PCT" "$RL7_AT") && [ -n "$SEG" ] && LINE="${LINE}  ${SEG}"
 
 echo -e "$LINE"
