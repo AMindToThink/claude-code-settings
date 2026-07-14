@@ -110,7 +110,7 @@
       "/tmp"
     ]
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -161,11 +161,14 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.sh"
+    "command": "~/.claude/statusline.sh",
+    "hideVimModeIndicator": true,
+    "refreshInterval": 60
   },
   "enabledPlugins": {
     "double-shot-latte@superpowers-marketplace": false,
-    "superpowers@superpowers-marketplace": false
+    "superpowers@superpowers-marketplace": false,
+    "docent@transluce-plugins": true
   },
   "extraKnownMarketplaces": {
     "claude-code-plugins": {
@@ -179,9 +182,16 @@
         "source": "github",
         "repo": "obra/superpowers-marketplace"
       }
+    },
+    "transluce-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "TransluceAI/claude-code-plugins"
+      }
     }
   },
   "effortLevel": "xhigh",
+  "advisorModel": "fable",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
@@ -191,6 +201,5 @@
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754101374377
-  },
-  "advisorModel": "fable"
+  }
 }

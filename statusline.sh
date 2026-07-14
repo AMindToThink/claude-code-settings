@@ -15,6 +15,9 @@ CWD=$(echo "$DATA" | "$JQ" -r '.cwd // ""')
 MODEL=$(echo "$DATA" | "$JQ" -r '.model.display_name // ""')
 # Absent when the current model does not support the effort parameter
 EFFORT=$(echo "$DATA" | "$JQ" -r '.effort.level // empty')
+# Present only while vim mode is enabled. We render it ourselves, so settings.json
+# sets statusLine.hideVimModeIndicator to suppress the built-in "-- INSERT --" row.
+VIM=$(echo "$DATA" | "$JQ" -r '.vim.mode // empty')
 COST=$(echo "$DATA" | "$JQ" -r '.cost.total_cost_usd // 0' | xargs printf "%.3f")
 CTX=$(echo "$DATA" | "$JQ" -r '.context_window.used_percentage // 0' | xargs printf "%.0f")
 ADDED=$(echo "$DATA" | "$JQ" -r '.cost.total_lines_added // 0')
@@ -61,6 +64,17 @@ fmt_limit() {
     printf '\033[%sm%s:%.0f%%%s\033[0m' "$(pct_color "$pct")" "$label" "$pct" "${until:+ ($until)}"
 }
 
+# This replaces the built-in indicator, so each mode gets its own color to stay
+# glanceable: INSERT green, NORMAL blue, VISUAL yellow.
+vim_color() {
+    case "$1" in
+        INSERT) echo '1;32' ;;
+        NORMAL) echo '1;34' ;;
+        VISUAL*) echo '1;33' ;;
+        *) echo '1' ;;
+    esac
+}
+
 # Shorten home directory to ~
 CWD="${CWD/#$HOME/~}"
 
@@ -75,14 +89,14 @@ LINE=""
 [ -n "$BRANCH" ] && LINE="${LINE}  \033[35m${BRANCH}\033[0m"
 LINE="${LINE}  \033[32m\$${COST}\033[0m"
 LINE="${LINE}  \033[32m+${ADDED}\033[0m \033[31m-${REMOVED}\033[0m"
-LINE="${LINE}  \033[90mctx:${CTX}%\033[0m"
 
-# Second line: plan usage. Omitted entirely when no window is reported, so we
-# never print a blank row.
+# Second line: vim mode, then the budgets -- context, then plan usage.
 LINE2=""
-SEG=$(fmt_limit 5h "$RL5_PCT" "$RL5_AT") && [ -n "$SEG" ] && LINE2="${SEG}"
-SEG=$(fmt_limit 7d "$RL7_PCT" "$RL7_AT") && [ -n "$SEG" ] && LINE2="${LINE2:+$LINE2  }${SEG}"
+[ -n "$VIM" ] && LINE2="\033[$(vim_color "$VIM")m${VIM}\033[0m  "
+LINE2="${LINE2}\033[90mctx:${CTX}%\033[0m"
+SEG=$(fmt_limit 5h "$RL5_PCT" "$RL5_AT") && [ -n "$SEG" ] && LINE2="${LINE2}  ${SEG}"
+SEG=$(fmt_limit 7d "$RL7_PCT" "$RL7_AT") && [ -n "$SEG" ] && LINE2="${LINE2}  ${SEG}"
 
 echo -e "$LINE"
-[ -n "$LINE2" ] && echo -e "$LINE2"
+echo -e "$LINE2"
 exit 0
