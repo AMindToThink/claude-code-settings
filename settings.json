@@ -162,6 +162,7 @@
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
+    "hideVimModeIndicator": true,
     "refreshInterval": 60
   },
   "enabledPlugins": {

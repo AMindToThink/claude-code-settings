@@ -79,7 +79,24 @@ expect_not_contains "no 5h segment when only 7d present" "$OUT" "5h:"
 OUT=$(render "$(payload "\"rate_limits\": {\"five_hour\": {\"used_percentage\": 0, \"resets_at\": $((NOW - 60))}}")")
 expect_contains "past reset time shows 'now'" "$OUT" "5h:0% (now)"
 
-# 5. Color thresholds: gray < 70 <= yellow < 90 <= red.
+# 5. Vim mode leads the line, in a per-mode color. NORMAL matters most here:
+#    the built-in indicator has no NORMAL state, which is why we render this.
+OUT=$(render "$(payload "\"vim\": {\"mode\": \"NORMAL\"}")")
+expect_contains "NORMAL renders (built-in indicator never shows it)" "$OUT" "ESC[1;34mNORMALESC[0m"
+[[ "$OUT" == ESC\[1\;34mNORMAL* ]] \
+    && echo "PASS: mode leads the line" \
+    || { echo "FAIL: mode leads the line ($OUT)"; FAILURES=$((FAILURES + 1)); }
+OUT=$(render "$(payload "\"vim\": {\"mode\": \"INSERT\"}")")
+expect_contains "INSERT renders green" "$OUT" "ESC[1;32mINSERTESC[0m"
+OUT=$(render "$(payload "\"vim\": {\"mode\": \"VISUAL LINE\"}")")
+expect_contains "VISUAL LINE renders yellow" "$OUT" "ESC[1;33mVISUAL LINEESC[0m"
+# Absent when vim mode is off -- the line must still start with the model.
+OUT=$(render "$(payload)")
+[[ "$OUT" == ESC\[36mOpus* ]] \
+    && echo "PASS: line starts at the model when vim mode is off" \
+    || { echo "FAIL: line starts at the model when vim mode is off ($OUT)"; FAILURES=$((FAILURES + 1)); }
+
+# 6. Color thresholds: gray < 70 <= yellow < 90 <= red.
 OUT=$(render "$(payload "\"rate_limits\": {\"five_hour\": {\"used_percentage\": 12, \"resets_at\": $((NOW + 3600))}}")")
 expect_contains "low usage is gray (90)" "$OUT" "ESC[90m5h:12%"
 OUT=$(render "$(payload "\"rate_limits\": {\"five_hour\": {\"used_percentage\": 75, \"resets_at\": $((NOW + 3600))}}")")
