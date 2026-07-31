@@ -193,6 +193,7 @@
   "advisorModel": "fable",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
+  "showThinkingSummaries": true,
   "theme": "dark",
   "editorMode": "vim",
   "remoteControlAtStartup": true,
