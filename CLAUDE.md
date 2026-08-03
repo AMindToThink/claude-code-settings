@@ -35,17 +35,20 @@ Use these commands:
 
 # Error Handling Philosophy
 
-- **Never use `continue` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
+- **Prefer failing fast over producing partial/misleading results.** This is our guiding star. In rare cases when it makes sense to produce partial/potentially misleading results, flag clearly to the user and make sure the user understands.
+- As an example, **never use `continue` or `try/catch` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
 - Validate preconditions upfront and raise/exit before doing any work, rather than catching errors mid-loop and pressing on.
-- Prefer failing fast over producing partial/misleading results.
+
+# Default model
+
+Matthew's default main-loop model is **Fable 5**.
 
 # Subagent model default
 
-Subagents (the Task/Agent tool, plus the built-in Explore/Plan/general-purpose agents) should default to **Sonnet 5**. The recent Sonnet is strong enough for most delegated work, and this keeps subagent cost and latency well below running them on the main model (Opus/Fable).
+Subagents (the Task/Agent tool, plus the built-in Explore/Plan/general-purpose agents) should default to **Sonnet 5** unless otherwise specified. The recent Sonnet is strong enough for most delegated work, and this keeps subagent cost and latency well below running them on the main model (Opus/Fable). For difficult subagent work, it is still alright to choose Opus/Fable.
 
-- **Where it lives:** `env.CLAUDE_CODE_SUBAGENT_MODEL` = `"sonnet"` in `~/.claude/settings.json`. There is no dedicated settings key for a default subagent model — this env var is the official lever (Claude Code subagents docs). Takes effect on new sessions.
-- **Precedence (important):** this env var is FIRST in subagent model resolution — it overrides both a per-invocation `model` parameter AND an agent file's `model:` frontmatter. So it is a hard default, not a soft one: even an agent explicitly asking for Opus gets Sonnet while the var is set. To run a specific agent on a different model, change or unset the var.
-- **Keep this updated as models release and capabilities shift.** Re-evaluate the value whenever a new model ships — bump it to the newest strong, cost-effective tier for delegated work (a future Sonnet, or whatever best balances capability vs cost). Don't let it stagnate on an outdated model.
+- **This is a recommendation, not an enforced setting.** Do NOT set `env.CLAUDE_CODE_SUBAGENT_MODEL` — that env var is first in subagent model resolution, so it overrides both per-invocation `model` parameters and agent files' `model:` frontmatter, forcing every subagent onto one model. It was deliberately removed from `~/.claude/settings.json` (August 2026). Pick the model per invocation instead (the Agent tool's `model` parameter, or an agent's frontmatter).
+- **Keep this updated as models release and capabilities shift.** Re-evaluate the recommendation whenever a new model ships — favor the newest strong, cost-effective tier for delegated work (a future Sonnet, or whatever best balances capability vs cost). Don't let it stagnate on an outdated model.
 
 # Advisor model (`/advisor`) — when to invoke
 
@@ -67,10 +70,6 @@ Subagents (the Task/Agent tool, plus the built-in Explore/Plan/general-purpose a
 2. Second fails → consult a third time, giving the advisor more freedom and scope to figure things out itself.
 3. Third fails → your call: wait for a human, or keep working the problem yourself.
 
-# Claude Code Skills
-
-When creating skills, always use the directory convention: `~/.claude/skills/<skill-name>/SKILL.md`. Never create a flat file like `~/.claude/skills/<skill-name>.md` — it will be silently ignored.
-
 # Paper writing: inline numbers come from scripts, never from memory
 
 Every number cited in a paper's prose (abstract, captions, discussion, inline stats in any section) must resolve through a script-generated source — either an `\input{}`'d table or a `\newcommand{\macroName}{value}` macro emitted by a build script. Never hand-type a number into prose. This is the same discipline as `bibliography-from-ids`: the data has one source of truth, the script reads it, and the document references the result by name.
@@ -82,12 +81,5 @@ The standard pattern:
 
 The `import-content` skill covers the script-to-document pattern; apply it to inline scalars, not just tables. When auditing a paper for the first time, grep for digit sequences in prose and treat each unexplained one as a potential hand-typed number.
 
-# "Multi-pass" in a causal LM is a confusion, not an alternative
-
-In a causal language model, `log P(token at position i | preceding tokens)` depends only on the model and positions `< i`. Running n forward passes with growing prefixes ("multi-pass") therefore computes exactly the same per-token log-probs as a single forward pass over the full concatenation — but wastes O(n²) FLOPs for zero informational benefit. Pass n already contains everything from passes 1..n-1 for free, because causal attention cannot see future tokens.
-
-Treat "multi-pass" as a red flag in code, prose, and investigation reports:
-- Do **not** compare single-pass against multi-pass as if one were ground truth. Any difference reflects tokenization choices (e.g., BPE merges at boundaries), not a bias. Single-pass IS the metric by definition.
-- Do **not** write "distortion", "bias", or "error" framings of SP–MP differences.
-- **Flag** multi-pass code when you find it (add a header comment explaining the above, or open a follow-up issue); do not silently delete it — leave a trail so future readers learn from the confusion. Similarly flag any report or test that treats multi-pass as a baseline.
-- If a pre-existing test asserts SP ≈ MP, flag it as tautological. When safe, replace it with direct tests of boundary detection and extraction.
+# Writing Style
+More recent versions of yourself have developed a unique, nonstandard dialect. While I appreciate that it can help you think more clearly in your chain-of-thought, please use common english in your explanations and responses to me.
