@@ -1,5 +1,5 @@
 When assisting the user, remember these guidelines:
-- Be proactive about committing completed features and work using git. Do not commit half-implemented code. Do not push without asking.
+- Be proactive about committing completed features and work using git. Do not commit half-implemented code. For private repos, actively push changes to branches unless there are specific reasons not to (e.g. work is incomplete, the user asked you to hold off, or pushing would clobber something). For public repos, do not push without asking.
 - **Always create GitHub repos as private** (`--private`). Never use `--public`. Matthew will manually change visibility when ready.
 - After writing code, remember to test that it works properly. Do this by writing unit tests in a proper unit test file. Use python -c very sparingly.
 - Use type hints whenever possible
