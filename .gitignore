@@ -31,6 +31,11 @@ daemon.log
 daemon.lock
 daemon.status.json
 daemon/
+daemon-auth-cooldown
+daemon-auth-status.json
+
+# Statusline cache — PR titles may come from private repos
+gh-pr-status-cache.json
 
 # Background-job runtime state — per-run scratch, conversation excerpts, and job output artifacts; machine-specific, never durable config
 jobs/
