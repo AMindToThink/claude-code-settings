@@ -33,6 +33,17 @@ Use these commands:
     - `uv add package-name --script script.py`
     - `uv remove package-name --script script.py`
 
+# PR scope: code/docs and reports belong in separate PRs
+
+A pull request either changes code and its documentation, or it adds/updates reports and their generated artifacts — never both.
+
+**Why:** the two get reviewed differently. Code is read line by line for correctness; a report is skimmed for whether its claims and numbers hold up. Reports are also often enormous — regenerated figures, result JSONs, tables, long markdown — so bundling them buries a subtle code change under thousands of lines of generated output and makes the code diff effectively unreviewable.
+
+**How to apply:**
+- When work produces both, split it into two PRs. Land the code/docs PR first when the report is generated *by* that code, so the report PR shows output from already-merged code.
+- Analysis and plotting scripts are code. Their output — figures, `.json`/`.csv`/`.jsonl` results, `RESULTS.md` — is a report.
+- If both are already committed on one branch, split before opening the PR, not after.
+
 # Error Handling Philosophy
 
 - **Prefer failing fast over producing partial/misleading results.** This is our guiding star. In rare cases when it makes sense to produce partial/potentially misleading results, flag clearly to the user and make sure the user understands.
