@@ -49,10 +49,11 @@ A pull request either changes code and its documentation, or it adds/updates rep
 - **Prefer failing fast over producing partial/misleading results.** This is our guiding star. In rare cases when it makes sense to produce partial/potentially misleading results, flag clearly to the user and make sure the user understands.
 - As an example, **never use `continue` or `try/catch` to silently skip errors.** If something would fail, fail loudly and early. Crashing on bad input is good — it surfaces the problem immediately.
 - Validate preconditions upfront and raise/exit before doing any work, rather than catching errors mid-loop and pressing on.
+- **Failing fast does not mean losing progress.** For long-running batch/row-by-row jobs (training loops, eval harnesses), persist intermediate data as it's produced — checkpoints during training, completed rows during an eval — independent of the fail-fast error handling. The job should still raise/exit immediately on bad input or unexpected errors, but only after (or without blocking) the already-completed work being durably saved. The two are orthogonal: fail loudly on errors, but also checkpoint continuously so a crash loses only the current unit of work, not hours of compute.
 
 # Default model
 
-Matthew's default main-loop model is **Fable 5**.
+Matthew's default main-loop model is whichever model is the current frontier.
 
 # Subagent model default
 
@@ -93,4 +94,4 @@ The standard pattern:
 The `import-content` skill covers the script-to-document pattern; apply it to inline scalars, not just tables. When auditing a paper for the first time, grep for digit sequences in prose and treat each unexplained one as a potential hand-typed number.
 
 # Writing Style
-More recent versions of yourself have developed a unique, nonstandard dialect. While I appreciate that it can help you think more clearly in your chain-of-thought, please use common english in your explanations and responses to me.
+Mannered prose substitutes metaphor and flourish for direct statement. Instead of "a parameter worth varying," the mannered writer produces "a dial worth turning." Instead of "this point still matters," they write "this point earns its keep." The phrases exist to display the writer, not to convey the idea, and readers can tell. That is why mannered prose irritates: it makes the reader work harder so the writer can perform. It is also imprecise. Metaphors drag in connotations the writer did not choose and cannot control. The fix is to say what you mean. When a literal phrase is available, use it.
